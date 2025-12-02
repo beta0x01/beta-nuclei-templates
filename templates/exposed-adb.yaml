@@ -1,4 +1,4 @@
-id: exposed-adb
+id: expsoed-adb
 
 info:
   name: Exposed Android Debug Bridge
@@ -11,9 +11,9 @@ info:
     - https://www.securezoo.com/2018/06/thousands-of-android-devices-leave-debug-port-5555-exposed/
   tags: network,adb,rce,android
   metadata:
-    max-request: 2
+  mongoid: 0000
 
-tcp:
+network:
   - inputs:
       - data: "434e584e0100000100001000ea000000445b0000bcb1a7b1"  # Generated using https://github.com/projectdiscovery/network-fingerprint
         type: hex
