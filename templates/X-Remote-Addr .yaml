@@ -1,7 +1,7 @@
-id: x-remote-ip 
+id: x-remote-addr 
 
 info:
-  name: x-remote-ip 
+  name: x-remote-addr 
   author: Kabilan S
   severity: low
 
@@ -10,10 +10,10 @@ requests:
     # Example of sending some headers to the servers
     headers:
       
-      X-Remote-IP: "evil.com"
+      X-Remote-Addr: "evil.com"
     path:
       - "{{BaseURL}}/"
     matchers:
       - type: word
         words:
-          - "evil.com_is_back.__we_get_it.__check_back_daily"
+          - "evil"

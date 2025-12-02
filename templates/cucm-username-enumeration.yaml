@@ -8,10 +8,8 @@ info:
     - https://www.n00py.io/2022/01/unauthenticated-dumping-of-usernames-via-cisco-unified-call-manager-cucm/
   remediation: To mitigate this, enable Contact Search Authentication.
   tags: cisco,cucm,unauth,enum
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/cucm-uds/users"
@@ -30,6 +28,7 @@ http:
         condition: and
 
       - type: dsl
+        part: header
         dsl:
           - contains(tolower(content_type), 'application/xml')
           - contains(tolower(content_type), 'text/xml')
