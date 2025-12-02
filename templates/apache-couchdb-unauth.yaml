@@ -14,7 +14,7 @@ info:
     max-request: 1
     shodan-query: product:"CouchDB"
     fofa-query: app="APACHE-CouchDB"
-  tags: apache,couchdb,unauth,misconfig,vuln
+  tags: apache,couchdb,unauth,misconfig
 
 http:
   - method: GET
@@ -27,4 +27,4 @@ http:
           - 'status_code == 200'
           - 'contains(body,"httpd_design_handlers") && contains(body,"external_manager")'
         condition: and
-# digest: 4a0a00473045022007e0ef247d8c4b39c436e3f075855dc0a1de479ca0417e97d368bced20dc85b4022100e3355fb5b58c6022695f28a05a8fe6d9c38ec8ac553e16e94908a9308d147c4c:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022053008792f061ef833f044b7439346118cb7fdcf5a5a1a381b7f70598bc2559e40221008379416ef2b9276ab8421a73d9b0e2e515ba722ee7a9529ed35fe12adad9c6e4:922c64590222798bb761d5b6d8e72950
