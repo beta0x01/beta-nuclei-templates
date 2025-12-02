@@ -46,7 +46,7 @@ while IFS= read -r repo_line; do
 
     # Run Cent (Silent mode to reduce clutter, remove > /dev/null to debug)
     # forcing --path . as requested
-    cent --threads 100 --path . > /dev/null 2>&1
+    cent --threads 100 --path . --config "$CENT_CONFIG" > /dev/null 2>&1
     
     # --- 4. Git Operations ---
     # Add all files (including new templates)
