@@ -1,24 +1,21 @@
 id: adobe-connect-central-login
 
 info:
-  name: Adobe Connect Central Login Panel
+  name: Adobe Connect Central Login
   author: dhiyaneshDk
-  description: An Adobe Connect Central login panel was detected.
   severity: info
-  tags: adobe,panel,connect-central
-  reference:
-    - https://www.adobe.com/products/adobeconnect.html
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cve-id:
-    cwe-id: CWE-200
+  tags: adobe,panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/system/login"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /system/login HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word
@@ -29,5 +26,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/03/20
