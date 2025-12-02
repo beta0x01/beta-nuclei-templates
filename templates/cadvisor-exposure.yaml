@@ -10,10 +10,10 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     shodan-query: title:"cAdvisor"
-  tags: exposure,misconfig,dashboard,vuln
+  tags: exposure,misconfig,dashboard
 
 http:
   - method: GET
@@ -35,4 +35,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220246f74d3be9e69dde02395c31bc76dfdee725817aef991e18da2dce7f73dbbc2022026032582321acadd237a5508c3d8b475933c184fc63cb6a2fda54682a7b31d70:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/03/08

@@ -7,9 +7,13 @@ info:
   description: Identify Magento
   reference:
     - https://devdocs.magento.com/guides/v2.4/graphql/
-  tags: magento
+  metadata:
+    max-request: 2
+    verified: true
+    shodan-query: http.component:"Magento"
+  tags: magento,tech
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'
@@ -22,7 +26,7 @@ requests:
     matchers:
       - type: dsl
         dsl:
-          - 'contains(tolower(all_headers), "x-magento")'
+          - 'contains(tolower(header), "x-magento")'
           - 'status_code == 200'
         condition: and
 

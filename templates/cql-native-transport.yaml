@@ -7,10 +7,11 @@ info:
   description: |
     Native transport requests (NTR) are any requests made via the CQL Native Protocol. CQL Native Protocol is the way the Cassandra driver communicates with the server.
   metadata:
+    max-request: 2
     verified: true
-    max-request: 1
-    shodan-query: cassandra
-  tags: network,cassandra,cql,detect,detection,tcp,discovery
+    shodan-query: "cassandra"
+  tags: network,cassandra,cql
+
 tcp:
   - inputs:
       - data: "/n"
@@ -24,7 +25,7 @@ tcp:
 
     host:
       - "{{Hostname}}"
-    port: 9042
+      - "{{Host}}:9042"
 
     matchers:
       - type: word
@@ -35,4 +36,3 @@ tcp:
       - type: regex
         regex:
           - "protocol version: ([0-9]+)"
-# digest: 490a00463044022073f7daf0c09d0e31a96dd627ae173e57f56e63791c1c5d53d21c92f8b1f205e602204f46bfe83fc3cef1520df153982a5cf57ebea3e75ce60909d6ba40053e46b7db:922c64590222798bb761d5b6d8e72950

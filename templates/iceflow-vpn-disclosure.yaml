@@ -5,8 +5,10 @@ info:
   author: pikpikcu
   severity: low
   tags: exposure,files,iceflow,logs
+  metadata:
+    max-request: 8
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/log/system.log"

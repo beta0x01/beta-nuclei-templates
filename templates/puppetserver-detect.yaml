@@ -7,8 +7,10 @@ info:
   reference:
     - https://insinuator.net/2020/09/puppet-assessment-techniques/
   tags: tech,puppet,exposure
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/puppet-ca/v1/certificate_request/{{randstr}}"

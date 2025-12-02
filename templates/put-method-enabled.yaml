@@ -10,8 +10,10 @@ info:
   reference:
     - https://portswigger.net/kb/issues/00100900_http-put-method-is-enabled
   tags: injection
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - raw:
       - |
         PUT /testing-put.txt HTTP/1.1

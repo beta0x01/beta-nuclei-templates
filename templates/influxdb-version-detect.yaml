@@ -10,16 +10,13 @@ info:
     - https://github.com/influxdata/influxdb/blob/master/http/platform_handler.go#L62
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:influxdata:influxdb:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     shodan-query: "X-Influxdb-"
-    product: influxdb
-    vendor: influxdata
-  tags: tech,influxdb,api,discovery
+  tags: tech,influxdb,api
 
 http:
   - method: GET
@@ -37,4 +34,5 @@ http:
       - type: kval
         kval:
           - "X_Influxdb_Version"
-# digest: 4a0a0047304502202859631e416f0b0f11f4ac799f63775b6c44009f45c0ebf963d10ad7741c7852022100893f5fec4e1375d81afe8a4ca1c614cad0ebfb4fdc40928917ad8934c3e1392b:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/03/15

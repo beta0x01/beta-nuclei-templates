@@ -10,10 +10,11 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
-    shodan-query: http.title:"AxigenÂ WebAdmin"
+    max-request: 1
+    shodan-query: http.title:"Axigen WebAdmin"
   tags: axigen,panel
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -22,7 +23,7 @@ requests:
     matchers:
       - type: word
         words:
-          - '<title>AxigenÂ WebAdmin</title>'
+          - '<title>Axigen WebAdmin</title>'
 
       - type: status
         status:

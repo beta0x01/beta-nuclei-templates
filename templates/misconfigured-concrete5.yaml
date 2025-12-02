@@ -1,14 +1,19 @@
 id: misconfigured-concrete5
+
 info:
   name: Misconfigured Concrete5
   author: pdteam
   severity: low
   tags: misconfig,concrete,cms
-requests:
+  metadata:
+    max-request: 1
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
-    redirects: true
+
+    host-redirects: true
     max-redirects: 2
     matchers:
       - type: word

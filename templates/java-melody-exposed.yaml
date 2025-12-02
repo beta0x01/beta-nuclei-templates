@@ -10,8 +10,10 @@ info:
     - https://www.acunetix.com/vulnerabilities/web/javamelody-publicly-accessible/
     - https://github.com/javamelody/javamelody/wiki/UserGuide#16-security
   tags: config,java,javamelody
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/monitoring'

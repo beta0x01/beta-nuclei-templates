@@ -12,9 +12,12 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"SeedDMS"
   tags: default-login,seeddms
 
-requests:
+http:
   - raw:
       - |
         POST /op/op.Login.php HTTP/1.1

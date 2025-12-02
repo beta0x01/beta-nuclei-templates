@@ -10,14 +10,11 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
-    cpe: cpe:2.3:a:froxlor:froxlor:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     shodan-query: title:"Froxlor Server Management Panel"
-    product: froxlor
-    vendor: froxlor
-  tags: froxlor,xss,vuln
+  tags: froxlor,xss
 
 http:
   - method: GET
@@ -41,4 +38,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205a76094bd5be4a386dc6e391b3d4b88253664f55067475fab9f3a3b87abc9967022100de36c3908f2e3075cc13e963cef4884423c126e58ca5e3647e5059e90a96449c:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/03/23

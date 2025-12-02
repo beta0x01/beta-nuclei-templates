@@ -9,10 +9,11 @@ info:
     - https://github.com/opencpu/opencpu/
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: opencpu,oss
   metadata:
     max-request: 1
-  tags: panel,opencpu,oss,discovery
 
 http:
   - method: GET
@@ -27,4 +28,5 @@ http:
           - OpenCPU Test Page
           - OpenCPU API Explorer
         condition: or
-# digest: 490a00463044022012c6ad39d14fe9b15d3a4f32a3e1577dc7f76c2554df95dc69fdeadf173d3bd4022025230bc9f4e40b8c52bc6a5f8e64ecdea7ddc5dc55f998b269ffa86e8a740528:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/04/25

@@ -6,9 +6,11 @@ info:
   severity: low
   reference:
     - https://twitter.com/Wh11teW0lf/status/1295594085445709824
-  tags: exposure,lotus
+  tags: exposure,lotus,files
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/domcfg.nsf"

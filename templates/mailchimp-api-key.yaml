@@ -5,8 +5,10 @@ info:
   author: puzzlepeaches
   severity: info
   tags: exposure,token,mailchimp
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

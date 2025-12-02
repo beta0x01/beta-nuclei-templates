@@ -7,13 +7,11 @@ info:
   description: SkyCaiji admin panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:skycaiji:skycaiji:*:*:*:*:*:*:*:*
+  tags: panel,tech,skycaiji
   metadata:
     max-request: 1
-    vendor: skycaiji
-    product: skycaiji
-  tags: panel,tech,skycaiji,discovery
 
 http:
   - method: GET
@@ -22,6 +20,7 @@ http:
 
     matchers-condition: and
     matchers:
+
       - type: word
         part: body
         words:
@@ -39,4 +38,5 @@ http:
         group: 1
         regex:
           - 'com">SkyCaiji<\/a> ([A-Z0-9.]+) 后台管理<\/p>'
-# digest: 490a0046304402207ad7ed0a5b30831b4001edf8359386890a42201f3a2cb175c6be872e9024fe20022009a3e9a2115e7449063a6c046af4ed85fa223b5c3d47eec87deb665225bf329f:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/01/15

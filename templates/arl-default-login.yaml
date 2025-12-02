@@ -10,8 +10,10 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   tags: arl,default-login
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         POST /api/user/login HTTP/1.1

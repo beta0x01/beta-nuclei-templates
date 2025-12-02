@@ -12,8 +12,10 @@ info:
     cvss-score: 5.8
     cwe-id: CWE-522
   tags: default-login,AlphaWeb
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         GET /php/node_info.php HTTP/1.1

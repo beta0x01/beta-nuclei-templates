@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 58
-  tags: waf,fuzz,fuzzing,vuln
+  tags: waf,tech,fuzz
 
 http:
   - raw:
@@ -21,6 +21,7 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         _={{whatwaf-payloads}}
+
       - |
         GET /?_={{whatwaf-payloads}} HTTP/1.1
         Host: {{Hostname}}
@@ -134,7 +135,7 @@ http:
         regex:
           - '(?i)<h\d>\d{3}.forbidden<.h\d>'
           - '(?i)request.forbidden.by.administrative.rules.'
-        condition: and
+        condition: or
         part: response
 
       - type: regex
@@ -791,4 +792,5 @@ http:
           - '(?)content="CloudWAF"'
           - 'Server: CloudWAF'
           - 'Set-Cookie: HWWAFSESID='
-# digest: 490a0046304402202981dcbffe187f5f5e9695375f20099a394328aa7113941953d58caa78b560850220054a4c6a797708d399cd2cc6a1ef85536513144d632e16d8d663141e359f0184:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by Myst7ic on 2023/04/25

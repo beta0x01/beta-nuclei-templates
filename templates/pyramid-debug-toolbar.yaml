@@ -8,8 +8,10 @@ info:
   reference:
     - https://github.com/Pylons/pyramid_debugtoolbar
   tags: pyramid,logs,exposure
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/_debug_toolbar/"

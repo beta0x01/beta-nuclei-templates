@@ -6,9 +6,12 @@ info:
   severity: info
   reference:
     - https://www.slideshare.net/0ang3el/hunting-for-security-bugs-in-aem-webapps-129262212
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Adobe Experience Manager"
   tags: aem
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/system/bgservlets/test.css'

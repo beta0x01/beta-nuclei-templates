@@ -12,14 +12,16 @@ info:
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
-    cve-id:
     cwe-id: CWE-522
   tags: config,exposure,laravel
+  metadata:
+    max-request: 22
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/.env"
+      - "{{BaseURL}}/.env.bak"
       - "{{BaseURL}}/.env.dev"
       - "{{BaseURL}}/.env.dev.local"
       - "{{BaseURL}}/.env.development.local"

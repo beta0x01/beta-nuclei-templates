@@ -7,10 +7,10 @@ info:
   reference:
     - https://www.facebook.com/photo/?fbid=612496907587499&set=a.467014098802448
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     shodan-query: title:"Teradek Cube Administrative Console"
-  tags: panel,login,teradek,discovery
+  tags: panel,login,teradek
 
 http:
   - method: GET
@@ -29,4 +29,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201866651fef56b8d27c61e229cbb455391d6b515a09c8f8cd82f0e1f11511cc99022035005ed8a610a56d222cffb4c970ca8f79bf99f58252abfaf48c8aa5ebc4f842:922c64590222798bb761d5b6d8e72950

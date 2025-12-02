@@ -5,10 +5,11 @@ info:
   author: pussycat0x
   severity: info
   metadata:
+    max-request: 1
     fofa-query: app="Abyss-Web-Server"
   tags: tech
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -5,9 +5,11 @@ info:
   author: milo2012
   severity: info
   description: Version of VMware vRealize Operations Manager
-  tags: vmware,vrealize
+  tags: vmware,vrealize,tech
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/ui/login.action"

@@ -10,10 +10,10 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     shodan-query: title:"Dashboard - Ace Admin"
-  tags: misconfig,exposure,aceadmin,discovery
+  tags: misconfig,exposure,aceadmin
 
 http:
   - method: GET
@@ -37,4 +37,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210083c4f4c1a1c801e7ec324886e34f0629eae9986360d99e3601e1f0165eae1e09022100eead930f9ca6d9b3301c2dae59c9e06de002671ed88264f7343bbf477171c786:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/03/08

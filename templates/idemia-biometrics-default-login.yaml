@@ -12,8 +12,10 @@ info:
     cvss-score: 5.8
     cwe-id: CWE-522
   tags: idemia,biometrics,default-login
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         POST /cgi-bin/login.cgi HTTP/1.1

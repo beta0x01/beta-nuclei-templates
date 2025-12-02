@@ -5,8 +5,10 @@ info:
   author: YASH ANAND @yashanand155
   severity: info
   tags: cgi
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/test/test.cgi"

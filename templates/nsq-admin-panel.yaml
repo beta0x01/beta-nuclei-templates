@@ -12,10 +12,10 @@ info:
     cvss-score: 6.5
     cwe-id: CWE-200
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     shodan-query: title:"nsqadmin"
-  tags: nsq,admin,panel,exposure,discovery
+  tags: nsq,admin,panel,exposure
 
 http:
   - method: GET
@@ -38,4 +38,5 @@ http:
         group: 1
         regex:
           - "nsqadmin/v([0-9.]+)"
-# digest: 490a00463044022010fe0abada44296601eff856073ed634b9eebde08a41deb3b5f54f70eab1aebd02202576e5159f9c6eb5fa513ebff56a5fc475d6e091bc5fb3b6fddcac22839e6ca2:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/02/22

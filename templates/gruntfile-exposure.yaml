@@ -1,17 +1,27 @@
 id: gruntfile-exposure
+
 info:
-  name: Gruntfile Exposure
+  name: Gruntfile Config - Detect
   author: sbani
   severity: info
+  description: Gruntfile configuration information was detected.
   reference:
     - https://gruntjs.com/sample-gruntfile
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
   tags: config,exposure
-requests:
+  metadata:
+    max-request: 2
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}/Gruntfile.js"
       - "{{BaseURL}}/Gruntfile.coffee"
-    redirects: true
+
+    host-redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:
@@ -21,6 +31,9 @@ requests:
         words:
           - "module.exports"
           - "grunt"
+
       - type: status
         status:
           - 200
+
+# Enhanced by mp on 2023/02/05

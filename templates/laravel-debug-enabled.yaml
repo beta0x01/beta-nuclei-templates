@@ -9,8 +9,10 @@ info:
   remediation: |
     Disable Laravel's debug mode by setting APP_DEBUG to false.
   tags: debug,laravel,misconfig
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/_ignition/health-check"

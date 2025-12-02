@@ -8,10 +8,11 @@ info:
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:
+    fofa-query: product="JIRA"
     max-request: 1
     shodan-query: http.component:"Atlassian Jira"
-    fofa-query: product="JIRA"
-  tags: creds-stuffing,login-check,self-hosted,jira,vuln
+  tags: login-check,jira,creds-stuffing,self-hosted
+
 variables:
   username: "{{username}}"
   password: "{{password}}"
@@ -32,8 +33,8 @@ http:
         dsl:
           - username
           - password
-    attack: pitchfork
 
+    attack: pitchfork
     matchers-condition: and
     matchers:
       - type: word
@@ -44,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202a36fa879dcdb9cc19362c0e60afa58dda466fdbbf434b5125606ec3bc234272022100a0e3c0ce41dcbebb839567ba2a45769f365d578417650fd1014de8110ceef738:922c64590222798bb761d5b6d8e72950

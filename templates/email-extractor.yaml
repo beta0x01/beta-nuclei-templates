@@ -1,13 +1,18 @@
 id: email-extractor
+
 info:
   name: Email Extractor
   author: panch0r3d
   severity: info
   tags: misc,email
-requests:
+  metadata:
+    max-request: 1
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     extractors:
       - type: regex
         part: body

@@ -5,14 +5,16 @@ info:
   author: randomstr1ng
   severity: info
   description: Detection of SAP NetWeaver ABAP Webserver WebGUI
-  tags: sap,webserver
+  tags: sap,webserver,tech
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/sap/bc/gui/sap/its/webgui"
 
-    redirects: true
+    host-redirects: true
     max-redirects: 2
     matchers:
       - type: word

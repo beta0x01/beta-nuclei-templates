@@ -7,8 +7,10 @@ info:
   reference:
     - https://cxsecurity.com/issue/WLB-2021040115
   tags: hasura,ssrf,graphql
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         POST /v1/query HTTP/1.1

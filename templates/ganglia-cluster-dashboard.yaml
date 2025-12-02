@@ -6,15 +6,11 @@ info:
   severity: low
   description: |
     Ganglia Cluster dashboard was detected.
-  classification:
-    cpe: cpe:2.3:a:ganglia:ganglia-web:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 2
-    vendor: ganglia
-    product: ganglia-web
+    verified: true
     shodan-query: html:"ganglia_form.submit()"
-  tags: misconfig,ganglia,dashboard,discovery
+  tags: misconfig,ganglia,dashboard
 
 http:
   - method: GET
@@ -23,7 +19,6 @@ http:
       - "{{BaseURL}}/ganglia/"
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -34,4 +29,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201546e6c1f3ac7b3e1f86041b7964f8d30597f46754c70a5cfcc8d1518efe1eb3022029d6a6062aaabdc5d2c99b31cf7496b8e0b268457f3081d921aa9198fe56a604:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/03/08

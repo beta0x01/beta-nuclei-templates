@@ -6,8 +6,10 @@ info:
   severity: info
   description: Template to detect a running GetSimple CMS instance
   tags: tech,getsimple
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

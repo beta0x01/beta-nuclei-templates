@@ -5,8 +5,10 @@ info:
   author: dhiyaneshDK
   severity: info
   tags: misconfig,nginx,status
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/nginx_status"

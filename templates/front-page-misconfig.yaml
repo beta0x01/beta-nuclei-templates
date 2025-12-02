@@ -7,8 +7,10 @@ info:
   reference:
     - https://docs.microsoft.com/en-us/archive/blogs/fabdulwahab/security-protecting-sharepoint-server-applications
   tags: misconfig,exposure,frontpage
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/_vti_inf.html"
