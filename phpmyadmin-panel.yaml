@@ -3,7 +3,9 @@ id: phpmyadmin-panel
 info:
   name: phpMyAdmin Panel
   author: pdteam
-  severity: low
+  severity: info
+  metadata:
+    shodan-query: http.title:phpMyAdmin
   tags: panel,phpmyadmin
 
 requests:
