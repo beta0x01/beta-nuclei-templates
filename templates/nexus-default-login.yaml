@@ -7,19 +7,22 @@ info:
   tags: nexus,default-login
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         POST /service/rapture/session HTTP/1.1
-        Host: {{Subdomains}}
+        Host: {{Hostname}}
         X-Nexus-UI: true
         Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 
-        username=YWRtaW4%3D&password=YWRtaW4xMjM%3D
+        username={{base64(username)}}&password={{base64(password)}}
+
+    payloads:
+      username:
+        - admin
+      password:
+        - admin123
+    attack: pitchfork
+
     matchers-condition: and
     matchers:
       - type: status

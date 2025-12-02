@@ -7,15 +7,10 @@ info:
   tags: oracle,default-login
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         POST /xmlpserver/services/XMLPService HTTP/1.1
-        Host: {{Subdomains}}
+        Host: {{Hostname}}
         Content-Type: text/xml
         SOAPAction: ""
         Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -24,12 +19,20 @@ requests:
            <soapenv:Header/>
            <soapenv:Body>
               <rep:createSession soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-                 <username xsi:type="xsd:string">Administrator</username>
-                 <password xsi:type="xsd:string">Administrator</password>
+                 <username xsi:type="xsd:string">{{username}}</username>
+                 <password xsi:type="xsd:string">{{password}}</password>
                  <domain xsi:type="xsd:string">bi</domain>
               </rep:createSession>
            </soapenv:Body>
         </soapenv:Envelope>
+
+    payloads:
+      username:
+        - Administrator
+      password:
+        - Administrator
+    attack: pitchfork
+
     matchers-condition: and
     matchers:
       - type: status

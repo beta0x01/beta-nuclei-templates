@@ -4,19 +4,13 @@ info:
   name: Atlassian Crowd panel detect
   author: organiccrap
   severity: info
-  tags: panel
+  tags: panel,atlassian
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - '{{BaseURL}}/crowd/console/login.action'
 
-    raw:
-      - |
-        GET /crowd/console/login.action HTTP/1.1
-        Host: {{Subdomains}}
-    matchers-condition: and
     matchers:
       - type: word
         words:

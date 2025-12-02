@@ -9,18 +9,19 @@ info:
   tags: dell,emc,ecom,default-login
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         GET / HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Authorization: Basic YWRtaW46IzFQYXNzd29yZA==
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username + ':' + password)}}
+
+    payloads:
+      username:
+        - root
+      password:
+        - calvin
+    attack: pitchfork
+
     matchers-condition: and
     matchers:
       - type: word

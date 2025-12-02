@@ -5,24 +5,28 @@ info:
   severity: high
   tags: nagios,default-login
   reference: https://www.nagios.org
-
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         GET /nagios/side.php HTTP/1.1
-        Host: {{Subdomains}}
-        Accept-Encoding: gzip, deflate
-        Authorization: Basic bmFnaW9zYWRtaW46bmFnaW9zYWRtaW4=
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username + ':' + password)}}
+
+    payloads:
+      username:
+        - nagiosadmin
+        - root
+      password:
+        - nagiosadmin
+        - nagiosxi
+    attack: pitchfork
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - 'Current Status'
