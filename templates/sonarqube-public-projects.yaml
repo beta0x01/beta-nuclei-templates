@@ -4,10 +4,11 @@ info:
   name: Sonarqube with public projects
   author: sickwell
   severity: low
+  reference:
+    - https://next.sonarqube.com/sonarqube/web_api/api/components/suggestions?internal=true
   tags: sonarqube,misconfig
-  reference: https://next.sonarqube.com/sonarqube/web_api/api/components/suggestions?internal=true
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/api/components/suggestions?recentlyBrowsed="

@@ -8,9 +8,9 @@ info:
   metadata:
     verified: true
     google-query: intext:"index of /" ".composer-auth.json"
-  tags: exposure,devops,files
+  tags: exposure,devops
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/.composer-auth.json"

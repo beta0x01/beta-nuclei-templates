@@ -7,9 +7,9 @@ info:
   metadata:
     verified: true
     google-query: intitle:"index of" "token.json"
-  tags: exposure,cloud,google,devops,files
+  tags: exposure,cloud,google,devops
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/token.json"

