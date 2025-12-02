@@ -5,10 +5,8 @@ info:
   author: 0xcrypto
   severity: info
   tags: fuzz,wordpress
-  metadata:
-    max-request: 24434
 
-http:
+requests:
   - raw:
       - |
         GET /wp-content/themes/{{themeSlug}}/readme.txt HTTP/1.1

@@ -5,10 +5,8 @@ info:
   author: panch0r3d
   severity: info
   tags: misc,email
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
