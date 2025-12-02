@@ -7,9 +7,9 @@ info:
   metadata:
     verified: true
     shodan-query: html:"anonymous-cli-metrics.json"
-  tags: npm,devops,exposure,files
+  tags: npm,devops,exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/anonymous-cli-metrics.json"

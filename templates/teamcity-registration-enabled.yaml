@@ -17,13 +17,13 @@ info:
     shodan-query: http.component:"TeamCity"
   tags: misconfig,auth-bypass,teamcity,jetbrains
 
-http:
+requests:
   - raw:
       - |
         GET /registerUser.html?init=1 HTTP/1.1
         Host: {{Hostname}}
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers:
       - type: word

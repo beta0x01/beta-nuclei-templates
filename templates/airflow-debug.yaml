@@ -4,9 +4,12 @@ info:
   name: Airflow Debug Trace
   author: pdteam
   severity: low
+  metadata:
+    verified: true
+    shodan-query: title:"Airflow - DAGs"
   tags: apache,airflow,fpd
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/admin/airflow/login"
