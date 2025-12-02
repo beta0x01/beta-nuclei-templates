@@ -7,12 +7,10 @@ info:
   reference:
     - https://book.hacktricks.xyz/pentesting/9100-pjl
   tags: network,iot,printer
-  description: |
-    Unauthorized access to printers allows attackers to print, eavesdrop sensitive documents.
   metadata:
-    max-request: 1
+  mongoid: 0000
 
-tcp:
+network:
   - inputs:
       - data: "@PJL INFO STATUS\n"
     host:
