@@ -5,10 +5,8 @@ info:
   author: emadshanab
   severity: info
   tags: misc
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/clientaccesspolicy.xml"

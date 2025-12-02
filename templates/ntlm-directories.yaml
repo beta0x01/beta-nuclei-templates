@@ -6,11 +6,9 @@ info:
   severity: info
   reference:
     - https://medium.com/swlh/internal-information-disclosure-using-hidden-ntlm-authentication-18de17675666
-  metadata:
-    max-request: 47
   tags: misc,fuzz,windows
 
-http:
+requests:
   - raw:
       - |
         GET {{path}} HTTP/1.1
@@ -66,13 +64,12 @@ http:
         - /webticket/webticketservice.svc
         - /webticket/webticketservice.svcabs/
         - /adfs/services/trust/2005/windowstransport
-        - /internal_windows_authentication/
 
     matchers-condition: and
     matchers:
       - type: dsl
         dsl:
-          - "contains(tolower(header), 'www-authenticate: ntlm')"
+          - "contains(tolower(all_headers), 'www-authenticate: ntlm')"
 
       - type: status
         status:

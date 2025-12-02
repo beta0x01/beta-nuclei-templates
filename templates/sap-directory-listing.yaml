@@ -5,10 +5,8 @@ info:
   author: dhiyaneshDK
   severity: medium
   tags: sap,listing,misconfig
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/irj/go/km/navigation/'

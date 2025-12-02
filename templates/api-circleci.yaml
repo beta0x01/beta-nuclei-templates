@@ -3,15 +3,12 @@ id: api-circleci
 info:
   name: CircleCI API Test
   author: zzeitlin
+  reference: https://circleci.com/docs/api/v1
   severity: info
-  reference:
-    - https://circleci.com/docs/api/v1
   tags: token-spray,circleci
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://circleci.com/api/v1.1/me?circle-token={{token}}"

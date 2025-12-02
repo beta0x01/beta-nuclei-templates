@@ -7,20 +7,13 @@ info:
   reference:
     - https://blog.melbadry9.xyz/dangling-dns/xyz-services/ddns-worksites
   tags: takeover
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: regex
         regex:
           - "(?:Company Not Found|you&rsquo;re looking for doesn&rsquo;t exist)"

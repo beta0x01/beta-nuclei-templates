@@ -5,10 +5,8 @@ info:
   author: pikpikcu
   severity: medium
   tags: apache,unauth,misconfig
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/conf'

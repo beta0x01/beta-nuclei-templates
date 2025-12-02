@@ -6,11 +6,10 @@ info:
   severity: info
   description: Internal documentation file often used in projects which can contain sensitive information.
   metadata:
-    max-request: 1
     shodan-query: html:"README.MD"
-  tags: exposure,markdown,files
+  tags: exposure,markdown
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/README.md"

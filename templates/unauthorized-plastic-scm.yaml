@@ -12,10 +12,8 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-288
   tags: plastic
-  metadata:
-    max-request: 3
 
-http:
+requests:
   - raw:
       - |
         GET /account/register HTTP/1.1

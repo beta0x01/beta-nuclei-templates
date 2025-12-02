@@ -5,14 +5,12 @@ info:
   author: pikpikcu
   severity: info
   tags: tech,acontent
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-    host-redirects: true
+    redirects: true
     matchers-condition: and
     matchers:
 

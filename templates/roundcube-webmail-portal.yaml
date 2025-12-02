@@ -5,17 +5,16 @@ info:
   author: ritikchaddha
   severity: info
   metadata:
-    max-request: 2
     shodan-query: http.component:"RoundCube"
-  tags: roundcube,portal,tech
+  tags: roundcube,portal
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/webmail/"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     stop-at-first-match: true
     matchers-condition: and

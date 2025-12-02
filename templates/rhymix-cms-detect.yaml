@@ -8,10 +8,8 @@ info:
   reference:
     - https://github.com/rhymix/rhymix
   tags: tech,rhymix
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

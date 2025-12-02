@@ -5,10 +5,8 @@ info:
   author: geeknik
   severity: info
   tags: logs,exposure,rails
-  metadata:
-    max-request: 3
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/log/development.log"

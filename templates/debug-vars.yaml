@@ -1,15 +1,12 @@
 id: debug-vars
 
 info:
-  name: Golang Expvar - Detect
+  name: Golang expvar Information Disclosure
   author: luqman
   severity: low
-  description: Golang expvar function exposes multiple public variables via HTTP such as stack trace information and server operation counters.
   tags: go,debug,exposure
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/debug/vars"
@@ -25,5 +22,3 @@ http:
       - type: status
         status:
           - 200
-
-# Enhanced by cs on 2023/02/13

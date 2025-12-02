@@ -8,10 +8,8 @@ info:
   reference:
     - https://www.eyesofnetwork.com/en
   tags: tech,cisa,eyesofnetwork
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/login.php"

@@ -3,13 +3,11 @@ id: telerik-fileupload-detect
 info:
   name: Detect Telerik Web UI Fileupload Handler
   author: organiccrap
-  severity: info
+  severity: low
   description: This template detects the Telerik Web UI fileupload handler.
   tags: tech,telerik,fileupload
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/Telerik.Web.UI.WebResource.axd?type=rau"

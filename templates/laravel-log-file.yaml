@@ -8,10 +8,8 @@ info:
   reference:
     - https://laravel.com/docs/master/logging
   tags: laravel,logs,exposure
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/storage/logs/laravel.log"

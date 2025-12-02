@@ -3,15 +3,12 @@ id: api-instagramgraph
 info:
   name: Instagram Graph API Test
   author: zzeitlin
+  reference: https://developers.facebook.com/docs/instagram-api/getting-started
   severity: info
-  reference:
-    - https://developers.facebook.com/docs/instagram-api/getting-started
   tags: token-spray,instagram,graph
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://graph.facebook.com/v12.0/me/accounts?access_token={{token}}"

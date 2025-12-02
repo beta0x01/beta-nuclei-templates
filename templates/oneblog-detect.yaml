@@ -5,10 +5,8 @@ info:
   author: pikpikcu,daffainfo
   severity: info
   tags: tech,oneblog
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

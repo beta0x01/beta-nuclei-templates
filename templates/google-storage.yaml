@@ -5,10 +5,8 @@ info:
   author: 0xTeles
   severity: info
   tags: tech,gstorage,google,bucket
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -12,10 +12,8 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   tags: default-login,sequoiadb
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - raw:
       - |
         POST / HTTP/1.1
@@ -43,7 +41,7 @@ http:
 
       - type: dsl
         dsl:
-          - contains(tolower(header), 'sdbsessionid')
+          - contains(tolower(all_headers), 'sdbsessionid')
 
       - type: word
         part: body

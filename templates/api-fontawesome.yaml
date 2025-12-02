@@ -3,15 +3,12 @@ id: api-fontawesome
 info:
   name: FontAwesome API Test
   author: dwisiswant0
+  reference: https://fontawesome.com/v6.0/docs/apis/graphql/get-started
   severity: info
-  reference:
-    - https://fontawesome.com/v6.0/docs/apis/graphql/get-started
   tags: token-spray,fontawesome
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.fontawesome.com/token"

@@ -5,13 +5,12 @@ info:
   author: ritikchaddha
   severity: info
   metadata:
-    max-request: 1
     verified: true
     shodan-query: ecology_JSessionid
     fofa-query: app="泛微-协同办公OA"
   tags: ecology,tech
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

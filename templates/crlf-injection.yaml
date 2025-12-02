@@ -1,17 +1,13 @@
 id: crlf-injection
 
 info:
-  name: CRLF - Injection Detection
+  name: CRLF injection
   author: melbadry9,nadino,xElkomy
   severity: low
-  description: CRLF sequences were not properly sanitized.
-  reference:
-    - https://hackerone.com/reports/858650
-  tags: crlf,generic,hackerone
-  metadata:
-    max-request: 8
+  description: Improper sanitization of CRLF sequences.
+  tags: crlf,generic
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/%0D%0ASet-Cookie:crlfinjection=crlfinjection"
@@ -29,5 +25,3 @@ http:
         regex:
           - '(?m)^(?:Set-Cookie\s*?:(?:\s*?|.*?;\s*?))(crlfinjection=crlfinjection)(?:\s*?)(?:$|;)'
         part: header
-
-# Enhanced by mp on 2022/07/22

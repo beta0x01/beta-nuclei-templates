@@ -4,12 +4,11 @@ info:
   name: Autobahn-Python Webserver Detect
   author: pussycat0x
   severity: info
-  metadata:
-    max-request: 1
-    shodan-query: "AutobahnPython"
+  reference:
+    - https://www.shodan.io/search?query=%22AutobahnPython%22
   tags: tech,webserver
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

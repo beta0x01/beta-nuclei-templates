@@ -8,25 +8,19 @@ info:
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/231
   tags: takeover,wix
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
     matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
+        condition: or
         words:
           - 'Error ConnectYourDomain occurred'
           - 'wixErrorPagesApp'
-        condition: and
 
       - type: status
         status:

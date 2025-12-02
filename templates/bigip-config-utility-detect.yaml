@@ -5,10 +5,8 @@ info:
   author: dwisiswant0
   severity: info
   tags: tech,bigip
-  metadata:
-    max-request: 3
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/tmui/login.jsp"

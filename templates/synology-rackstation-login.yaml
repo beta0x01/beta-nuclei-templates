@@ -5,15 +5,13 @@ info:
   author: princechaddha
   severity: info
   tags: login,tech,synology,rackstation
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 1
     matchers-condition: and
     matchers:

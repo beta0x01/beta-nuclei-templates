@@ -5,11 +5,9 @@ info:
   author: zzeitlin
   severity: info
   tags: token-spray,google,fcm,firebase,cloud,messaging
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: POST
     path:
       - "https://fcm.googleapis.com/fcm/send"

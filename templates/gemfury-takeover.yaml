@@ -1,29 +1,19 @@
 id: gemfury-takeover
 
 info:
-  name: Gemfury Takeover Detection
-  author: pdteam,daffainfo
+  name: gemfury takeover detection
+  author: pdteam
   severity: high
   reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/154
-  metadata:
-    max-request: 1
-  tags: takeover,gemfury
+    - https://github.com/EdOverflow/can-i-take-over-xyz
+  tags: takeover
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    host-redirects: true
-    max-redirects: 1
-    matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
-        part: header
         words:
-          - "Location: https://gemfury.com/404"
+          - "404: This page could not be found."

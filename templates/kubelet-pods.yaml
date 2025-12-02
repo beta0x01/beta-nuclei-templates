@@ -6,10 +6,8 @@ info:
   severity: info
   description: Scans for kubelet pods
   tags: tech,k8s,kubernetes,devops,kubelet,pods
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/pods"

@@ -5,10 +5,8 @@ info:
   author: mavericknerd,dwisiswant0
   severity: info
   tags: tech,jolokia
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/jolokia/version'

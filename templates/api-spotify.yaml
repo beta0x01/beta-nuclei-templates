@@ -4,14 +4,11 @@ info:
   name: Spotify API Test
   author: zzeitlin
   severity: info
-  reference:
-    - https://developer.spotify.com/documentation/general/guides/authorization-guide/
+  reference: https://developer.spotify.com/documentation/general/guides/authorization-guide/
   tags: token-spray,spotify
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.spotify.com/v1/me/player/devices"

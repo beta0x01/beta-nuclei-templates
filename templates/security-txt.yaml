@@ -6,17 +6,15 @@ info:
   severity: info
   description: The website defines a security policy.
   tags: misc,generic
-  metadata:
-    max-request: 2
 
-http:
+requests:
   - method: GET
     path:
       - "{{RootURL}}/.well-known/security.txt"
       - "{{RootURL}}/security.txt"
 
     stop-at-first-match: true
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:

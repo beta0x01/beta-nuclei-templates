@@ -4,14 +4,11 @@ info:
   name: Adafruit IO API Test
   author: dwisiswant0
   severity: info
-  reference:
-    - https://io.adafruit.com/api/docs/
+  reference: https://io.adafruit.com/api/docs/
   tags: token-spray,adafruit
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://io.adafruit.com/api/v2/user"

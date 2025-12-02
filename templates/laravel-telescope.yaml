@@ -9,15 +9,13 @@ info:
   reference:
     - https://laravel.com/docs/8.x/telescope
   tags: laravel,disclosure,logs
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/telescope/requests"
 
-    host-redirects: true
+    redirects: true
     matchers:
       - type: word
         words:

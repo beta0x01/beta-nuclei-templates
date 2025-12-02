@@ -4,14 +4,11 @@ info:
   name: Optimizely API Test
   author: dwisiswant0
   severity: info
-  reference:
-    - https://library.optimizely.com/docs/api/app/v2/index.html
+  reference: https://library.optimizely.com/docs/api/app/v2/index.html
   tags: token-spray,optimizely
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.optimizely.com/v2/projects"

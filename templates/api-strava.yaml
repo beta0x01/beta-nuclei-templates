@@ -3,15 +3,12 @@ id: api-strava
 info:
   name: Strava API Test
   author: dwisiswant0
+  reference: https://developers.strava.com/docs/getting-started/
   severity: info
-  reference:
-    - https://developers.strava.com/docs/getting-started/
   tags: token-spray,strava
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://www.strava.com/api/v3/athlete"

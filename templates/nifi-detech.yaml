@@ -5,10 +5,8 @@ info:
   author: dwisiswant0
   severity: info
   tags: tech,apache,nifi
-  metadata:
-    max-request: 7
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/access/config"

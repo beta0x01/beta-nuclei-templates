@@ -6,12 +6,11 @@ info:
   severity: info
   description: Axis and Axis2 detection
   metadata:
-    max-request: 3
     verified: true
     shodan-query: http.html:"Apache Axis"
   tags: tech,axis2,middleware,apache
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

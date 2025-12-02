@@ -12,10 +12,8 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   tags: rockmongo,default-login
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - raw:
       - |
         POST /index.php?action=login.index HTTP/1.1

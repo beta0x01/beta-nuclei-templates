@@ -5,10 +5,8 @@ info:
   author: dwisiswant0
   severity: info
   tags: tech,cockpit
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/auth/login"

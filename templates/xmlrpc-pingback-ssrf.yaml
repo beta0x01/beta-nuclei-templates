@@ -6,11 +6,9 @@ info:
   severity: high
   reference:
     - https://hackerone.com/reports/406387
-  tags: xmlrpc,hackerone,ssrf,generic
-  metadata:
-    max-request: 1
+  tags: ssrf,generic,xmlrpc
 
-http:
+requests:
   - raw:
       - |
         POST /xmlrpc/pingback HTTP/1.1

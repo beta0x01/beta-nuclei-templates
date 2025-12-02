@@ -5,12 +5,11 @@ info:
   author: pikpikcu
   severity: info
   metadata:
-    max-request: 1
     fofa-query: title="subrion"
     shodan-query: http.component:"Subrion"
   tags: subrion,tech
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

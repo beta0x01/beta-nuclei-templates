@@ -12,10 +12,8 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   tags: visionhub,default-login
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - raw:
       - |
         POST /VisionHubWebApi/api/Login HTTP/1.1
@@ -35,12 +33,6 @@ http:
         words:
           - "Set-Cookie: admin"
         part: header
-
-      - type: word
-        words:
-          - "Set-Cookie: adminer_key"
-        part: header
-        negative: true
 
       - type: status
         status:

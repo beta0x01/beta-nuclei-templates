@@ -7,11 +7,9 @@ info:
   reference:
     - https://dash.cloudflare.com/profile/api-tokens
   tags: token-spray,cloudflare
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - raw:
       - |
         GET https://api.cloudflare.com/client/v4/user/tokens/verify HTTP/1.1
