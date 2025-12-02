@@ -1,11 +1,10 @@
-id: zhiyuan-file-upload
+id: achecker-detect
 
 info:
-  name: Zhiyuan Oa arbitrary file upload vulnerability
-  author: gy741
-  severity: critical
-  reference: https://www.programmersought.com/article/92658169875/
-  tags: zhiyuan,rce
+  name: AChecker Detect
+  author: princechaddha
+  severity: info
+  tags: tech,achecker
 
 requests:
   - payloads:
@@ -15,21 +14,21 @@ requests:
 
     raw:
       - |
-        GET /seeyon/thirdpartyController.do.css/..;/ajax.do HTTP/1.1
+        GET /checker/login.php HTTP/1.1
         Host: {{Subdomains}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept-Encoding: gzip, deflate
         Accept: */*
+        
     matchers-condition: and
     matchers:
-      - type: word
-        words:
-          - "java.lang.NullPointerException:null"
 
       - type: word
+        part: body
         words:
-          - "text/html"
-        part: header
+          - ": Web Accessibility Checker</title>"
+          - "AChecker - Copyright"
+        condition: and
 
       - type: status
         status:
