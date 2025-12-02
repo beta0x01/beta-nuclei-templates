@@ -11,7 +11,7 @@ info:
     - https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/
   metadata:
     max-request: 1
-  tags: dns,service,discovery
+  tags: dns,service
 
 dns:
   - name: "{{FQDN}}"
@@ -55,7 +55,6 @@ dns:
           - "servicebus.windows.net"
           - "visualstudio.com"
           - "-msedge.net"
-          - "msappproxy.net"
           - "trafficmanager.net"
 
       - type: word
@@ -255,7 +254,8 @@ dns:
 
       - type: word
         part: answer
-        name: adobe-marketo - 'mkto-.{5,8}\.com'
+        name: adobe-marketo
+          - 'mkto-.{5,8}\.com'
 
       - type: word
         part: answer
@@ -349,7 +349,7 @@ dns:
         words:
           - zdassets.com
           - zdorigin.com
-          - "zendesk.com"
+          - zendesk.com
           - zopim.com
 
       - type: word
@@ -434,4 +434,3 @@ dns:
         regex:
           - "IN\tCNAME\\t(.+)$"
           - "IN\\s*CNAME\\t(.+)$"
-# digest: 4a0a0047304502202ceadc95518df330be56ec2dbfabcb8fd3ab7f037fb8c642c658b724775611d8022100a948cd0e581b157c428b86ea02ced6eeb50eb7682fc062eec394aa8a8bcc397c:922c64590222798bb761d5b6d8e72950
