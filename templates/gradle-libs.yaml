@@ -5,12 +5,11 @@ info:
   author: DhiyaneshDK
   severity: info
   metadata:
-    max-request: 2
     verified: true
     github-query: filename:libs.versions.toml
   tags: file,gradle
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/gradle/libs.versions.toml'

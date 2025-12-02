@@ -8,7 +8,6 @@ info:
   reference:
     - https://sourceforge.net/projects/ocomonphp/
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.html:"OcoMon"
   classification:
@@ -17,7 +16,7 @@ info:
     cwe-id: CWE-200
   tags: panel,ocomon,oss
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

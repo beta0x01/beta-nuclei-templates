@@ -8,12 +8,11 @@ info:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
     - https://www.erlang.org/doc/reference_manual/errors.html
   metadata:
-    max-request: 1
     verified: true
     github-query: filename:badarg.log
   tags: exposure,badarg,log,debug
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/.badarg.log"

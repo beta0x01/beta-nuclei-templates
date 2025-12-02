@@ -5,10 +5,8 @@ info:
   author: Swissky
   severity: info
   tags: aem,tech
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

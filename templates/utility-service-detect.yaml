@@ -5,12 +5,11 @@ info:
   author: DhiyaneshDK
   severity: info
   metadata:
-    max-request: 1
-    verified: true
+    verified: "true"
     shodan-query: title:"Utility Services Administration"
   tags: tech,avaya,aura
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

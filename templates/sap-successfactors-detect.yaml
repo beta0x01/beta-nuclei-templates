@@ -1,21 +1,15 @@
 id: sap-successfactors-detect
 
 info:
-  name: SAP SuccessFactors Login Panel - Detect
+  name: SAP SuccessFactors Detect
   author: tess
   severity: info
-  description: SAP SuccessFactors login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   metadata:
-    max-request: 2
-    verified: true
+    verified: "true"
     shodan-query: title:"Login - SAP SuccessFactors"
   tags: sap,detect
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'
@@ -36,5 +30,3 @@ http:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/03/29

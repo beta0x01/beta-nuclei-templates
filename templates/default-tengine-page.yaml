@@ -5,12 +5,11 @@ info:
   author: pussycat0x
   severity: info
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.title:"Welcome to tengine"
   tags: tech,tengine,default-page
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

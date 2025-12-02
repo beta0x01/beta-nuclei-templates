@@ -5,12 +5,11 @@ info:
   author: tess
   severity: low
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.title:"TYPO3 Exception"
   tags: typo3,debug,misconfig
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

@@ -5,12 +5,11 @@ info:
   author: DhiyaneshDk
   severity: low
   metadata:
-    max-request: 1
     verified: true
     shodan-query: title:"PCDN Cache Node Dataset"
   tags: node,pcdn,misconfig
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

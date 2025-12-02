@@ -7,19 +7,18 @@ info:
   reference:
     - https://wordpress.org/plugins/cloudflare/
   metadata:
-    max-request: 1
     plugin_namespace: cloudflare
     wpscan: https://wpscan.com/plugin/cloudflare
   tags: tech,wordpress,wp-plugin,top-200
 
-http:
+requests:
   - method: GET
 
     path:
       - "{{BaseURL}}/wp-content/plugins/cloudflare/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/cloudflare.txt
+      last_version: ../../../helpers/wordpress/plugins/cloudflare.txt
 
     extractors:
       - type: regex

@@ -7,12 +7,11 @@ info:
   reference:
     - https://www.patrickfrei.ch/webalizer/
   metadata:
-    max-request: 1
     verified: true
     google-query: inurl:"/usage/error_202109.html"
   tags: exposure,stats,webalizer
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/usage/"

@@ -13,12 +13,11 @@ info:
     cvss-score: 7.30
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.component:"TeamCity"
   tags: misconfig,auth-bypass,teamcity,jetbrains
 
-http:
+requests:
   - raw:
       - |
         GET /registerUser.html?init=1 HTTP/1.1

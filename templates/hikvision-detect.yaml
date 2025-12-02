@@ -5,12 +5,11 @@ info:
   author: pdteam,its0x08
   severity: info
   metadata:
-    max-request: 2
     verified: true
     shodan-query: http.favicon.hash:999357577
   tags: tech,hikvision
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/favicon.ico"

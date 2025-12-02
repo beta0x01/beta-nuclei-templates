@@ -7,19 +7,18 @@ info:
   reference:
     - https://wordpress.org/plugins/adminimize/
   metadata:
-    max-request: 1
     plugin_namespace: adminimize
     wpscan: https://wpscan.com/plugin/adminimize
   tags: tech,wordpress,wp-plugin,top-200
 
-http:
+requests:
   - method: GET
 
     path:
       - "{{BaseURL}}/wp-content/plugins/adminimize/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/adminimize.txt
+      last_version: ../../../helpers/wordpress/plugins/adminimize.txt
 
     extractors:
       - type: regex

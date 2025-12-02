@@ -9,12 +9,11 @@ info:
   reference:
     - https://www.synopsys.com/software-integrity/security-testing/static-analysis-sast.html
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.title:"Coverity"
   tags: panel,coverity,synopsys
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -5,12 +5,11 @@ info:
   author: tess
   severity: unknown
   metadata:
-    max-request: 1
     verified: true
     shodan-query: title:"HFS /"
   tags: misconfig,hfs,exposure
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

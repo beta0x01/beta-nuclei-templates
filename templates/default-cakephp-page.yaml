@@ -5,12 +5,11 @@ info:
   author: DhiyaneshDK
   severity: info
   metadata:
-    max-request: 1
     verified: true
     shodan-query: html:"Welcome to CakePHP"
   tags: tech,cakephp,default-page
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

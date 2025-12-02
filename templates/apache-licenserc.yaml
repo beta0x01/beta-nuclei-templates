@@ -5,11 +5,10 @@ info:
   author: DhiyaneshDk
   severity: low
   metadata:
-    max-request: 1
     verified: true
   tags: exposure,file,apache
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/.licenserc.yaml'

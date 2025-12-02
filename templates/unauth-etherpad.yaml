@@ -7,12 +7,11 @@ info:
   description: |
     Finds Etherpad instances that allow adding new notes without authentication.
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.html:"index.createOpenPad"
   tags: etherpad,misconfig,unauth
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

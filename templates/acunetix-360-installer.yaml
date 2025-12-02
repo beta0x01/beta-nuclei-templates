@@ -5,12 +5,11 @@ info:
   author: pussycat0x
   severity: info
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.favicon.hash:-347188002
   tags: misconfig,exposure,install,acunetix
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/wizard/database/"

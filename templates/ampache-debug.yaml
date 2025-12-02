@@ -5,12 +5,11 @@ info:
   author: ritikchaddha
   severity: info
   metadata:
-    max-request: 2
     verified: true
     shodan-query: http.title:"Ampache -- Debug Page"
   tags: misconfig,ampache,debug
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

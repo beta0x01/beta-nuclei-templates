@@ -5,11 +5,10 @@ info:
   author: tess
   severity: medium
   metadata:
-    max-request: 1
     verified: true
   tags: logs,git,exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/.git/"
