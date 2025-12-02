@@ -1,14 +1,10 @@
 id: odoo-database-manager
 
 info:
-  name: Odoo - Database Manager Discovery
+  name: Odoo-Database-Manager
   author: __Fazal,R3dg33k
-  severity: critical
-  description: Odoo database manager was discovered.
-  metadata:
-    verified: true
-    shodan-query: title:"Odoo"
-  tags: panel,odoo,backup
+  severity: high
+  tags: panel,odoo
 
 requests:
   - method: GET
@@ -17,14 +13,11 @@ requests:
 
     matchers-condition: and
     matchers:
-      - type: word
-        words:
-          - "<title>Odoo</title>"
-          - ".o_database_delete"
-        condition: and
-
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/07/15
+      - type: word
+        words:
+          - "<title>Odoo</title>"
+          - "{ action: 'database_manager' }"
+        condition: and

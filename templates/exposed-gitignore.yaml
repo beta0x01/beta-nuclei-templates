@@ -1,18 +1,13 @@
 id: exposed-gitignore
 
 info:
-  name: Gitignore Config - Detect
-  author: TheZakMan,geeknik
+  name: Exposed Gitignore
+  author: TheZakMan
   severity: info
-  description: Gitignore configuration information was detected.
-  reference:
-    - https://twitter.com/pratiky9967/status/1230001391701086208
-    - https://www.tenable.com/plugins/was/98595
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: exposure,tenable,config,git
+  tags: config,git,exposure
+  reference: |
+      - https://twitter.com/pratiky9967/status/1230001391701086208
+      - https://www.tenable.com/plugins/was/98595
 
 requests:
   - method: GET
@@ -23,25 +18,18 @@ requests:
 
     matchers-condition: and
     matchers:
+      - type: status
+        status:
+          - 200
+
       - type: dsl
         dsl:
-          - 'len(body) > 50'
-          - 'status_code == 200'
-        condition: and
+          - '!contains(tolower(body), "<html") && !contains(tolower(body), "<!doctype") &&  !contains(tolower(body), "<script")'
 
-      - type: word
-        words:
-          - "application/javascript"
-          - "application/x-javascript"
-          - "application/json"
-          - "application/xml"
-          - "html"
-          - "<!doctype"
-          - "<script"
-          - "<meta"
-          - "image/"
-        part: response
-        negative: true
-        condition: or
+      - type: dsl
+        dsl:
+          - 'contains(tolower(all_headers), "binary/octet-stream")'
 
-# Enhanced by mp on 2023/02/05
+      - type: dsl
+        dsl:
+          - "len(body) > 50 "
