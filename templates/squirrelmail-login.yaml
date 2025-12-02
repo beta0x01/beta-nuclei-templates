@@ -7,13 +7,21 @@ info:
   reference: https://www.exploit-db.com/ghdb/7407
   metadata:
     shodan-query: 'http.title:"SquirrelMail - Login"'
-  tags: panel,squirrelmail
+  tags: panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/src/login.php"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /src/login.php HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

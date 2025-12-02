@@ -7,11 +7,19 @@ info:
   description: UserInfoServlet is exposed, it allows to bruteforce credentials. You can get valid usernames from jcr:createdBy, jcr:lastModifiedBy, cq:LastModifiedBy attributes of any JCR node.
   tags: aem
 
-
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/libs/cq/security/userinfo.json'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /libs/cq/security/userinfo.json HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: status
@@ -19,7 +27,13 @@ requests:
           - 200
 
       - type: word
+        part: body
         words:
-          - 'userName'
-          - 'userID'
+          - '"userID":'
+          - '"userName":'
         condition: and
+
+      - type: word
+        part: header
+        words:
+          - 'application/json'
