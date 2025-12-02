@@ -7,10 +7,8 @@ info:
   reference:
     - https://portswigger.net/burp/documentation/enterprise/api-reference
   tags: burp,tech
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/v0.1/"

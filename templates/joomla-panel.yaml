@@ -5,10 +5,8 @@ info:
   author: its0x08
   severity: info
   tags: panel,joomla
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/administrator/"

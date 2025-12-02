@@ -5,11 +5,10 @@ info:
   author: dhiyaneshDK
   severity: low
   metadata:
-    max-request: 1
     shodan-query: html:"git web interface version"
   tags: git
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

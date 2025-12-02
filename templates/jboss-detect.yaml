@@ -5,10 +5,8 @@ info:
   author: daffainfo,idealphase
   severity: info
   tags: tech,jboss
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

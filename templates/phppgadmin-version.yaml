@@ -1,19 +1,13 @@
 id: phppgadmin-version
 
 info:
-  name: PhpPgAdmin Version Information - Detect
+  name: phpPgAdmin version detect
   author: dr0pd34d
   severity: info
-  description: PhpPgAdmin version information was detected via the intro.php file.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
+  description: phpPgAdmin is a third-party tool for PostgreSQL databases. The version is being rendered in the intro.php file.
   tags: tech,phppgadmin
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/phppgadmin/intro.php"
@@ -34,5 +28,3 @@ http:
         part: body
         regex:
           - 'phpPgAdmin.*\(.*\)'
-
-# Enhanced by md on 2023/03/15

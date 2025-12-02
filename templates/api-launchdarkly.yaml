@@ -4,14 +4,11 @@ info:
   name: LaunchDarkly REST API
   author: Luqmaan Hadia
   severity: info
-  reference:
-    - https://apidocs.launchdarkly.com/
+  reference: https://apidocs.launchdarkly.com/
   tags: token-spray,launchdarkly
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - raw:
       - |
         GET https://app.launchdarkly.com/api/v2/members HTTP/1.1

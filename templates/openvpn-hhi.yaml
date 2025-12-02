@@ -6,10 +6,8 @@ info:
   severity: info
   description: A vulnerability in OpenVPN Access Server allows remote attackers to inject arbitrary redirection URLs by using the 'Host' HTTP header field.
   tags: openvpn,hostheader-injection
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - raw:
       - |
         GET / HTTP/1.1

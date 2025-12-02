@@ -4,16 +4,13 @@ info:
   name: Google Books API Test
   author: daffainfo
   severity: info
-  description: Google Books
   reference:
     - https://developers.google.com/books/docs/overview
-    - https://github.com/daffainfo/all-about-apikey/tree/main/google-books
+    - https://github.com/daffainfo/all-about-apikey/blob/main/Books/Google%20Books.md
   tags: token-spray,google,books
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC?key={{token}}"

@@ -4,14 +4,11 @@ info:
   name: JumpCloud API Test
   author: zzeitlin
   severity: info
-  reference:
-    - https://docs.jumpcloud.com/1.0/authentication-and-authorization/api-key
+  reference: https://docs.jumpcloud.com/1.0/authentication-and-authorization/api-key
   tags: token-spray,jumpcloud
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://console.jumpcloud.com/api/systems"

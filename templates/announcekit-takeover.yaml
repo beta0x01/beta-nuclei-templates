@@ -8,20 +8,14 @@ info:
   reference:
     - https://blog.melbadry9.xyz/dangling-dns/xyz-services/dangling-dns-announcekit
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/228
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
     matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
         words:
           - 'Error 404 - AnnounceKit'

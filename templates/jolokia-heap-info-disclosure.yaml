@@ -5,10 +5,8 @@ info:
   author: milo2012
   severity: info
   tags: jolokia,disclosure,java
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - raw:
       - |
         POST /jolokia/ HTTP/1.1

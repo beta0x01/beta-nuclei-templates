@@ -5,10 +5,8 @@ info:
   author: geeknik
   severity: info
   tags: config
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/status?full"

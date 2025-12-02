@@ -10,11 +10,9 @@ info:
     - https://www.actiontec.com/dsl/
   classification:
     cwe-id: CWE-200
-  tags: panel,setup,edb
-  metadata:
-    max-request: 1
+  tags: panel,setup
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/cgi-bin/webcm?getpage=../html/login.html'

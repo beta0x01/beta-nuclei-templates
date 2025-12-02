@@ -7,10 +7,8 @@ info:
   reference:
     - https://github.com/ImpressCMS
   tags: tech,impresscms
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

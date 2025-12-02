@@ -1,19 +1,12 @@
 id: ansible-config-disclosure
 
 info:
-  name: Ansible Configuration Page - Detect
+  name: Ansible Configuration Exposure
   author: pdteam
   severity: medium
-  description: Ansible configuration page was detected.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
-    cvss-score: 5.3
-    cwe-id: CWE-200
   tags: config,exposure
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/ansible.cfg'
@@ -23,5 +16,3 @@ http:
           - '[defaults]'
           - '[inventory]'
         condition: and
-
-# Enhanced by md on 2023/02/08

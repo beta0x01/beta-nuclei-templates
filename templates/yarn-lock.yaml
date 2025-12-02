@@ -5,11 +5,9 @@ info:
   author: oppsec
   severity: info
   description: The yarn.lock file stores the versions of each Yarn dependency installed.
-  tags: exposure,files
-  metadata:
-    max-request: 1
+  tags: exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/yarn.lock"

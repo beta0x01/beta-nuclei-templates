@@ -1,18 +1,17 @@
 id: msmtp-config
 
 info:
-  name: Msmtp - Config Exposure
+  name: Msmtp Config Exposure
   author: geeknik
   severity: high
-  description: Msmtp configuration was discovered.
+  description: msmtp is a very simple and easy to use SMTP client with fairly complete sendmail compatibility.
   reference:
     - https://wiki.archlinux.org/title/Msmtp
   metadata:
-    max-request: 1
     verified: true
   tags: exposure,generic,msmtp
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/.msmtprc"
@@ -38,5 +37,3 @@ http:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/07/15

@@ -3,15 +3,12 @@ id: api-taiga
 info:
   name: Taiga API Test
   author: dwisiswant0
+  reference: https://docs.taiga.io/api.html
   severity: info
-  reference:
-    - https://docs.taiga.io/api.html
   tags: token-spray,taiga
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.taiga.io/api/v1/application-tokens"

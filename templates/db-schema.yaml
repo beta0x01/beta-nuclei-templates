@@ -5,11 +5,9 @@ info:
   author: geeknik
   severity: info
   description: This file is auto-generated from the current state of the database.
-  tags: exposure,backup,files
-  metadata:
-    max-request: 3
+  tags: exposure,backup
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/db/schema.rb"

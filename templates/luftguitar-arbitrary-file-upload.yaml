@@ -7,11 +7,9 @@ info:
   description: A vulnerability in Luftguitar CMS allows remote unauthenticated users to upload files to the remote service via the 'ftb.imagegallery.aspx' endpoint.
   reference:
     - https://www.exploit-db.com/exploits/14991
-  tags: luftguitar,edb
-  metadata:
-    max-request: 1
+  tags: luftguitar
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/ftb.imagegallery.aspx"

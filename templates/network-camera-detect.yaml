@@ -5,14 +5,12 @@ info:
   author: iamthefrogy
   severity: info
   tags: iot
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/CgiStart?page=Single"
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers:
       - type: word

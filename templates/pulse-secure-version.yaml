@@ -5,10 +5,8 @@ info:
   author: dadevel
   severity: info
   tags: pulse
-  metadata:
-    max-request: 2
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/dana-na/nc/nc_gina_ver.txt"  # not present in newer release

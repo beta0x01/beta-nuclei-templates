@@ -5,10 +5,8 @@ info:
   author: CasperGN
   severity: info
   tags: tech,lotus
-  metadata:
-    max-request: 7
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/homepage.nsf"

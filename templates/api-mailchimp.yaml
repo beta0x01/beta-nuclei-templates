@@ -4,14 +4,11 @@ info:
   name: Mailchimp API Test
   author: zzeitlin
   severity: info
-  reference:
-    - https://mailchimp.com/developer/transactional/docs/smtp-integration/#credentials-and-configuration
+  reference: https://mailchimp.com/developer/transactional/docs/smtp-integration/#credentials-and-configuration
   tags: token-spray,mailchimp
-  metadata:
-    max-request: 1
 
 self-contained: true
-tcp:
+network:
   - inputs:
       - data: "AUTH PLAIN {{base64(hex_decode('00')+'apikey'+hex_decode('00')+token)}}\r\n"
         read: 1024

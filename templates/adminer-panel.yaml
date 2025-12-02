@@ -10,12 +10,11 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
-    max-request: 8
     verified: true
     shodan-query: title:"Login - Adminer"
   tags: panel,adminer
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/adminer.php'

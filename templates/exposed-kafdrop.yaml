@@ -5,10 +5,8 @@ info:
   author: dhiyaneshDk
   severity: low
   tags: exposure,misconfig,kafdrop
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

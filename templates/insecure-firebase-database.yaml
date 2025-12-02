@@ -8,11 +8,10 @@ info:
   reference:
     - https://blog.securitybreached.org/2020/02/04/exploiting-insecure-firebase-database-bugbounty
   metadata:
-    max-request: 2
     verified: true
   tags: firebase,google,misconfig
 
-http:
+requests:
   - raw:
       - |
         PUT /{{randstr}}.json HTTP/1.1
@@ -32,11 +31,6 @@ http:
         part: body_2
         words:
           - '{"id":"insecure-firebase-database"}'
-
-      - type: word
-        part: header
-        words:
-          - "application/json"
 
       - type: status
         status:

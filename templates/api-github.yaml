@@ -3,15 +3,12 @@ id: api-github
 info:
   name: GitHub API Test
   author: zzeitlin
+  reference: https://docs.github.com/en/rest/reference/users
   severity: info
-  reference:
-    - https://docs.github.com/en/rest/reference/users
   tags: token-spray,github
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.github.com/user"

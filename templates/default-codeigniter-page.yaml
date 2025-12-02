@@ -4,12 +4,11 @@ info:
   name: Default CodeIgniter Page
   author: dhiyaneshDK
   severity: info
-  metadata:
-    max-request: 1
-    shodan-query: http.title:"Welcome to CodeIgniter"
+  reference:
+    - https://www.shodan.io/search?query=http.title%3A%22Welcome+to+CodeIgniter%22
   tags: tech,codeigniter
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

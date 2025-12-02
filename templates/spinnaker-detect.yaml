@@ -6,10 +6,8 @@ info:
   severity: info
   description: Detects the Spinnaker continuous delivery software
   tags: tech,spinnaker
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -23,4 +21,4 @@ http:
 
       - type: dsl
         dsl:
-          - "contains(tolower(header), 'x-spinnaker-priority')"
+          - "contains(tolower(all_headers), 'x-spinnaker-priority')"

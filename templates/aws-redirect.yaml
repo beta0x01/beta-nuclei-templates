@@ -7,10 +7,8 @@ info:
   reference:
     - https://link.medium.com/fgXKJHR9P7
   tags: aws,takeover
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

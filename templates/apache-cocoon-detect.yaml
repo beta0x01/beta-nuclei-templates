@@ -5,18 +5,17 @@ info:
   author: ffffffff0x
   severity: info
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.html:"Apache Cocoon"
     fofa-query: app="APACHE-Cocoon"
   tags: apache,cocoon,tech
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers:
       - type: word

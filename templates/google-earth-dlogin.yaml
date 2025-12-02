@@ -19,11 +19,10 @@ info:
     sudo /opt/google/gehttpd/bin/htpasswd -c
     /opt/google/gehttpd/conf.d/.htpasswd geapacheuse"
   metadata:
-    max-request: 1
     shodan-query: title:"GEE Server"
   tags: default-login,google-earth
 
-http:
+requests:
   - raw:
       - |
         GET /admin/ HTTP/1.1

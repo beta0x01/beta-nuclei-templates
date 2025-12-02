@@ -5,10 +5,8 @@ info:
   author: pdteam
   severity: info
   tags: jira,tech
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/rest/api/latest/serverInfo"

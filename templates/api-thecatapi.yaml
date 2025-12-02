@@ -4,16 +4,13 @@ info:
   name: TheCatApi API Test
   author: daffainfo
   severity: info
-  description: Pictures of cats from Tumblr
   reference:
     - https://docs.thecatapi.com/
-    - https://github.com/daffainfo/all-about-apikey/tree/main/thecatapi
+    - https://github.com/daffainfo/all-about-apikey/blob/main/Animals/TheCatApi.md
   tags: token-spray,thecatapi
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.thecatapi.com/v1/votes"
@@ -24,6 +21,7 @@ http:
       - type: word
         part: body
         words:
-          - '"country_code":'
-          - '"created_at":'
+          - 'id":'
+          - 'image_id":'
+          - 'sub_id":'
         condition: and

@@ -6,10 +6,8 @@ info:
   severity: info
   description: A small command-line utility to interact with Redmine - https://pypi.org/project/Redmine-CLI/
   tags: tech,redmine
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/.redmine-cli"

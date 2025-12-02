@@ -4,14 +4,11 @@ info:
   name: Twitter API Test
   author: zzeitlin
   severity: info
-  reference:
-    - https://developer.twitter.com/en/docs/twitter-api/api-reference-index
+  reference: https://developer.twitter.com/en/docs/twitter-api/api-reference-index
   tags: token-spray,twitter
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.twitter.com/1.1/account_activity/all/subscriptions/count.json"
