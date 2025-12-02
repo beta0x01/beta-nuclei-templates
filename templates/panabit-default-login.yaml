@@ -8,30 +8,33 @@ info:
   tags: panabit,default-login
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
-        POST /control/login HTTP/1.1
-        Host: {{Subdomains}}
-        Origin: {{Scheme}}://{{Subdomains}}
+        POST /login/userverify.cgi HTTP/1.1
+        Host: {{Hostname}}
+        Origin: {{BaseURL}}
         Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryAjZMsILtbrBp8VbC
-        Referer: {{Scheme}}://{{Subdomains}}/login/login.htm
+        Referer: {{BaseURL}}/login/login.htm
         Accept-Encoding: gzip, deflate
         Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
 
         ------WebKitFormBoundaryAjZMsILtbrBp8VbC
-        Content-Disposition: form-data; name="username"
+        Content-Disposition: form-data; name="{{username}}"
 
         admin
         ------WebKitFormBoundaryAjZMsILtbrBp8VbC
-        Content-Disposition: form-data; name="password"
+        Content-Disposition: form-data; name="{{password}}"
 
         panabit
         ------WebKitFormBoundaryAjZMsILtbrBp8VbC--
+
+    payloads:
+      username:
+        - username
+      password:
+        - password
+    attack: pitchfork
+
     matchers-condition: and
     matchers:
       - type: word

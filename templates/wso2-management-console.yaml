@@ -5,19 +5,13 @@ info:
   author: dhiyaneshDK
   severity: info
   reference: https://www.exploit-db.com/ghdb/5691
-  tags: panel
+  tags: panel,wso2
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - '{{BaseURL}}/carbon/admin/login.jsp'
 
-    raw:
-      - |
-        GET /carbon/admin/login.jsp HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word

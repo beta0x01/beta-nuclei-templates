@@ -9,16 +9,19 @@ info:
   reference: https://www.qognify.com/products/visionhub/
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         POST /VisionHubWebApi/api/Login HTTP/1.1
-        Host: {{Subdomains}}
-        Authorization: Basic YWRtaW46YWRtaW4=
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username + ':' + password)}}
+
+    payloads:
+      username:
+        - admin
+      password:
+        - admin
+    attack: pitchfork
+
     matchers-condition: and
     matchers:
       - type: word

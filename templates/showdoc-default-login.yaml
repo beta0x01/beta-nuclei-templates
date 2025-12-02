@@ -9,18 +9,21 @@ info:
   tags: showdoc,default-login
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         POST /server/index.php?s=/api/user/login HTTP/1.1
-        Host: {{Subdomains}}
-        Content-Type: application/x-www-form-urlencoded
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded;charset=UTF-8
 
-        username=showdoc&password=123456&v_code=
+        username={{username}}&password={{password}}&v_code=
+
+    payloads:
+      username:
+        - showdoc
+      password:
+        - 123456
+    attack: pitchfork
+
     matchers-condition: and
     matchers:
 

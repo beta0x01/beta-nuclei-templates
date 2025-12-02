@@ -11,15 +11,11 @@ info:
   tags: fatpipe,auth-bypass,router
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         GET /fpui/jsp/index.jsp HTTP/1.1
-        Host: {{Subdomains}}
+        Host: {{Hostname}}
+        Accept: */*
 
     matchers-condition: and
     matchers:
