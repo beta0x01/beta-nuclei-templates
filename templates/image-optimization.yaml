@@ -1,24 +1,24 @@
-id: wordpress-shortpixel-image-optimiser
+id: wordpress-image-optimization
 
 info:
-  name: ShortPixel Image Optimizer – Optimize Images, Convert WebP & AVIF Detection
+  name: Image Optimizer by Elementor – Compress, Resize and Optimize Images Detection
   author: ricardomaia
   severity: info
   reference:
-    - https://wordpress.org/plugins/shortpixel-image-optimiser/
+    - https://wordpress.org/plugins/image-optimization/
   metadata:
-    plugin_namespace: shortpixel-image-optimiser
-    wpscan: https://wpscan.com/plugin/shortpixel-image-optimiser
+    plugin_namespace: image-optimization
+    wpscan: https://wpscan.com/plugin/image-optimization
   tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
 
     path:
-      - "{{BaseURL}}/wp-content/plugins/shortpixel-image-optimiser/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/image-optimization/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/shortpixel-image-optimiser.txt
+      last_version: helpers/wordpress/plugins/image-optimization.txt
 
     extractors:
       - type: regex

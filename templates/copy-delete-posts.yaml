@@ -1,24 +1,24 @@
-id: wordpress-shortpixel-image-optimiser
+id: wordpress-copy-delete-posts
 
 info:
-  name: ShortPixel Image Optimizer – Optimize Images, Convert WebP & AVIF Detection
+  name: Duplicate Post Detection
   author: ricardomaia
   severity: info
   reference:
-    - https://wordpress.org/plugins/shortpixel-image-optimiser/
+    - https://wordpress.org/plugins/copy-delete-posts/
   metadata:
-    plugin_namespace: shortpixel-image-optimiser
-    wpscan: https://wpscan.com/plugin/shortpixel-image-optimiser
+    plugin_namespace: copy-delete-posts
+    wpscan: https://wpscan.com/plugin/copy-delete-posts
   tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
 
     path:
-      - "{{BaseURL}}/wp-content/plugins/shortpixel-image-optimiser/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/copy-delete-posts/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/shortpixel-image-optimiser.txt
+      last_version: helpers/wordpress/plugins/copy-delete-posts.txt
 
     extractors:
       - type: regex

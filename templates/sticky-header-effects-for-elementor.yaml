@@ -1,24 +1,24 @@
-id: wordpress-shortpixel-image-optimiser
+id: wordpress-sticky-header-effects-for-elementor
 
 info:
-  name: ShortPixel Image Optimizer – Optimize Images, Convert WebP & AVIF Detection
+  name: Sticky Header Effects for Elementor Detection
   author: ricardomaia
   severity: info
   reference:
-    - https://wordpress.org/plugins/shortpixel-image-optimiser/
+    - https://wordpress.org/plugins/sticky-header-effects-for-elementor/
   metadata:
-    plugin_namespace: shortpixel-image-optimiser
-    wpscan: https://wpscan.com/plugin/shortpixel-image-optimiser
+    plugin_namespace: sticky-header-effects-for-elementor
+    wpscan: https://wpscan.com/plugin/sticky-header-effects-for-elementor
   tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
 
     path:
-      - "{{BaseURL}}/wp-content/plugins/shortpixel-image-optimiser/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/sticky-header-effects-for-elementor/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/shortpixel-image-optimiser.txt
+      last_version: helpers/wordpress/plugins/sticky-header-effects-for-elementor.txt
 
     extractors:
       - type: regex
