@@ -9,14 +9,9 @@ info:
     - https://github.com/bigbluebutton/greenlight
   classification:
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:bigbluebutton:greenlight:*:*:*:*:*:*:*:*
-  metadata:
-    max-request: 1
-    vendor: bigbluebutton
-    product: greenlight
-  tags: panel,bigbluebutton,discovery
+  tags: panel,bigbluebutton
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'
@@ -35,4 +30,5 @@ http:
         group: 1
         regex:
           - 'Greenlight<\/a>\. (.*)'
-# digest: 4b0a0048304602210089a77f2af8f5ffe3b0803bbbfc405df51705f230258db9503c4f61e5e7443a52022100e5447db4fc8c992f97ee3a6a40e3affc6bc19e5b3d2f26e28cd13e84ebc852fb:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by mp on 2022/03/23

@@ -12,11 +12,10 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
-    max-request: 1
     shodan-query: http.title:"Kafka Center"
-  tags: kafka,default-login,vuln
+  tags: kafka,default-login
 
-http:
+requests:
   - raw:
       - |
         POST /login/system HTTP/1.1
@@ -34,6 +33,7 @@ http:
 
     matchers-condition: and
     matchers:
+
       - type: word
         words:
           - '"code":200'
@@ -43,4 +43,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220609cdeb4459d42fece360c36fa819c613c5dbc15f29d174cd57b9dfa391202ee0220792a6c2237d17cc00c66130943ee167ca104b45bb0b17a5951fee47875d1ed0c:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by mp on 2022/03/10

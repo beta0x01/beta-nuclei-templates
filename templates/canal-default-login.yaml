@@ -11,11 +11,9 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
-  metadata:
-    max-request: 1
-  tags: canal,alibaba,default-login,vuln
+  tags: alibaba,default-login
 
-http:
+requests:
   - raw:
       - |
         POST /api/v1/user/login HTTP/1.1
@@ -42,4 +40,5 @@ http:
         words:
           - 'data":{"token"'
           - '"code":20000'
-# digest: 4b0a00483046022100fac00e2ece2fa4599c4c8b787230f8b6588c673566a2b01f925fa9e33cdd30ce0221009318ab62fb1557d9f771a534ce6fb3a27558077322fb03aa9f60b07e69dbd1df:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by mp on 2022/03/22

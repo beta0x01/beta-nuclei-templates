@@ -11,15 +11,11 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
-    cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 8
     shodan-query: http.component:"Adobe Experience Manager"
-    product: experience_manager
-    vendor: adobe
-  tags: aem,default-login,adobe,vuln
+  tags: aem,default-login,adobe
 
-http:
+requests:
   - raw:
       - |
         POST /libs/granite/core/content/login.html/j_security_check HTTP/1.1
@@ -41,6 +37,7 @@ http:
         - anonymous
         - jdoe@geometrixx.info
         - aparker@geometrixx.info
+
       aem_pass:
         - admin
         - password
@@ -50,8 +47,8 @@ http:
         - anonymous
         - jdoe
         - aparker
-    stop-at-first-match: true
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: status
@@ -64,4 +61,5 @@ http:
           - login-token
           - crx.default
         condition: and
-# digest: 490a0046304402200f3a8dfa89bfb8a3bfbf1ba04eb3c710a8518b9b2df216da2a1ad5e001bd41b5022063e13bb2ef58e74a502282614c3f2fd965fe3a3df571bc93239f71aab498bc50:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by mp on 2022/03/23

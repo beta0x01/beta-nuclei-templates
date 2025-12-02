@@ -1,15 +1,13 @@
 id: javascript-env
 
 info:
-  name: JavaScript Environment Configuration - Detect
-  author: pdp,geeknik,hetyh
+  name: JavaScript Environment Config
+  author: pdp,geeknik
   severity: low
-  description: Multiple common JavaScript environment configuration files were detected.
-  metadata:
-    max-request: 7
-  tags: javascript,config,exposure,vuln
+  description: Detects common JavaScript environment configuration files.
+  tags: javascript,config,exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/env.js"
@@ -18,18 +16,18 @@ http:
       - "{{BaseURL}}/env.test.js"
       - "{{BaseURL}}/env.dev.js"
       - "{{BaseURL}}/env.prod.js"
-      - "{{BaseURL}}/__ENV.js"
 
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
+
       - type: status
         status:
           - 200
 
       - type: dsl
+        part: header
         dsl:
-          - "contains(tolower(content_type), 'application/javascript')"
+          - "contains(tolower(all_headers), 'content-type: application/javascript')"
 
       - type: word
         part: body
@@ -43,7 +41,6 @@ http:
           - "KEY"
           - "PASSWORD"
           - "VERSION"
-          - "window.__ENV ="
         condition: or
 
       - type: word
@@ -52,7 +49,5 @@ http:
           - "Bootstrap"
           - "jQuery"
           - "CSS TRANSITION SUPPORT"
-          - "is_ad_blocked"
-        condition: or
         negative: true
-# digest: 490a004630440220404466b88da26126984d8a9408b98cbaa7eebd9230333fca3b0d6376b6314ef4022019cfd15dc78732fae08e3077a1085c51cce2f3ae0e01f3584df12699a223b7ca:922c64590222798bb761d5b6d8e72950
+        condition: or

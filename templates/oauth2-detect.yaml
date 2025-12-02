@@ -5,11 +5,9 @@ info:
   author: righettod
   severity: info
   description: Try to detect OAuth 2.0 Authorization Server via the "oauth/token" endpoint
-  metadata:
-    max-request: 1
-  tags: tech,oauth,discovery
+  tags: tech,oauth
 
-http:
+requests:
   - method: POST
     path:
       - "{{BaseURL}}/oauth/token"
@@ -28,4 +26,3 @@ http:
         part: body
         words:
           - 'error":"invalid_client"'
-# digest: 4a0a00473045022100a829eb862999698ffecd46d7f919bcbcc61fbfce17e17275a1f8f80521018b2302202e7de0cc58f71f8f6d04377d144b5b5caa455bd5c971cff96f3d1dc86e5c0647:922c64590222798bb761d5b6d8e72950

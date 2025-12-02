@@ -1,7 +1,6 @@
 id: deos-open500ems-panel
-
 info:
-  name: DEOS OPEN 500EMS Controller - Admin Exposure
+  name: DEOS OPEN 500EMS Controller Admin Program Access
   author: sullo
   severity: high
   description: |
@@ -12,22 +11,17 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-284
-  metadata:
-    max-request: 2
-  tags: openv500,disclosure,panel,vuln
-
-http:
+  tags: openv500,disclosure,panel
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/cosmobdf.cgi?function=0"
       - "{{BaseURL}}/cgi-bin/cosmobdf.cgi?function=1"
-
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
-
       - type: word
         part: body
         words:
@@ -35,4 +29,5 @@ http:
           - '/cgi-bin/cosmobdf.cgi?function=12'
           - '/cgi-bin/cosmobdf.cgi?function=2'
         condition: or
-# digest: 490a004630440220590a85a137bd5910ff072099eebafdf6a5741496d7a8478a37ecec49579f0537022060af5900f28b79a9b13797b619b2723cb3d12b566aae4a1e3475934d9f1c663c:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by cs on 2022/07/22

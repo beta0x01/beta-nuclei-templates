@@ -2,20 +2,17 @@ id: tech-detect
 
 info:
   name: Wappalyzer Technology Detection
-  author: hakluke,righettod,matejsmycka
+  author: hakluke
   severity: info
-  metadata:
-    max-request: 1
-  tags: tech,discovery
+  tags: tech
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
-
     matchers-condition: or
     matchers:
       - type: regex
@@ -980,12 +977,10 @@ http:
         part: body
 
       - type: word
-        part: response
+        part: body
         name: next.js
         words:
           - '<script id="__NEXT_DATA__"'
-          - 'X-Powered-By: Next.js'
-        condition: or
 
       - type: regex
         name: angular
@@ -1303,7 +1298,7 @@ http:
         regex:
           - <link[^>]+ href="/?typo3(?:conf|temp)/
           - <img[^>]+ src="/?typo3(?:conf|temp)/
-          - This website is powered by TYPO3
+          - "<!--\n\tThis website is powered by TYPO3"
         condition: or
         part: body
 
@@ -1656,7 +1651,6 @@ http:
         name: react
         regex:
           - <[^>]+data-react
-          - Web site created using create-react-app
         condition: or
         part: body
 
@@ -2237,22 +2231,6 @@ http:
         condition: or
         part: body
 
-      - type: word
-        name: ibm-websphere-application-server
-        words:
-          - 'SRVE0255E:'
-          - 'A WebGroup/Virtual Host to handle'
-        condition: or
-        part: body
-
-      - type: word
-        name: ibm-websphere-application-server
-        words:
-          - '$wsep:'
-          - '$WSEP:'
-        condition: or
-        part: all_headers
-
       - type: regex
         name: bootstrap
         regex:
@@ -2440,12 +2418,12 @@ http:
         condition: or
         part: body
 
-      - type: word
+      - type: regex
         name: gitea
-        words:
-          - 'Powered by Gitea'
+        regex:
+          - '<div class="ui left">\n\s+© Gitea Version: ([\d.]+)'
+        condition: or
         part: body
-        case-insensitive: true
 
       - type: regex
         name: all-in-one-seo-pack
@@ -3003,7 +2981,6 @@ http:
         name: corepublish
         words:
           - 'content="CorePublish'
-
       - type: word
         name: diafan.cms
         words:
@@ -3178,12 +3155,6 @@ http:
         name: instantcms
         words:
           - 'content="InstantCMS"'
-
-      - type: word
-        name: interactsh
-        part: header
-        words:
-          - "X-Interactsh-Version"
 
       - type: word
         name: interred
@@ -3430,14 +3401,6 @@ http:
         part: header
 
       - type: word
-        name: new_laravel
-        words:
-          - "Set-Cookie: {{DN}}_session="
-          - "Set-Cookie: XSRF-TOKEN="
-        condition: and
-        part: header
-
-      - type: word
         name: express
         words:
           - "X-Powered-By: Express"
@@ -3573,24 +3536,11 @@ http:
           - "X-Jenkins"
         part: header
 
-
       - type: word
         name: cloudflare
         words:
           - "cloudflare"
-        part: server
-
-      - type: regex
-        name: cloudflare
-        regex:
-          - ".*"
-        part: cf_cache_status
-
-      - type: regex
-        name: cloudflare
-        regex:
-          - ".*"
-        part: cf_ray
+        part: header
 
       - type: word
         name: akamai
@@ -3719,145 +3669,3 @@ http:
           - "<!-- BEGIN PAN_FORM_CONTENT -->"
           - "js/pan/"
         condition: and
-
-      - type: word
-        name: sailsjs
-        part: header
-        words:
-          - "X-Powered-By: Sails"
-
-      - type: word
-        name: tengine
-        part: server
-        words:
-          - "Tengine"
-
-      - type: word
-        name: tornado
-        part: header
-        words:
-          - "TornadoServer/"
-
-      - type: word
-        name: uvicorn
-        part: server
-        words:
-          - "uvicorn"
-
-      - type: word
-        name: istio-envoy
-        part: server
-        words:
-          - "istio-envoy"
-
-      - type: word
-        name: clickhouse
-        part: header
-        words:
-          - "X-ClickHouse-Summary"
-        case-insensitive: true
-
-      - type: word
-        name: coolify
-        words:
-          - 'content="Coolify'
-
-      - type: word
-        part: body
-        name: iqmessenger
-        words:
-          - "<title>IQ Messenger</title>"
-
-      - type: word
-        part: header
-        name: sagemcom-tr069
-        words:
-          - 'realm="Sagemcom TR-069"'
-
-      - type: word
-        part: body
-        name: fastpanel
-        words:
-          - "<title>FASTPANEL</title>"
-
-      - type: word
-        part: body
-        name: axema-vaka
-        words:
-          - "<title>Vaka</title>"
-
-      - type: word
-        part: body
-        name: ksenia-security
-        words:
-          - "<title>Ksenia Lares WebServer</title>"
-
-      - type: word
-        part: body
-        name: topdesk
-        words:
-          - "/tas/css/auth.css"
-          - "topdeskidploginforwardurl"
-        condition: or
-
-      - type: word
-        part: body
-        name: usergate-utm
-        words:
-          - "<title>UserGate UTM</title>"
-
-      - type: word
-        part: body
-        name: usergate-ngfw
-        words:
-          - "<title>UserGate NGFW</title>"
-
-      - type: word
-        part: body
-        name: mikrotik-routeros
-        words:
-          - "<title>RouterOS router configuration page</title>"
-
-      - type: word
-        part: body
-        name: satel-ethm1-plus
-        words:
-          - "<title>ETHM-1 Plus</title>"
-
-      - type: word
-        part: body
-        name: qlik-sense
-        words:
-          - "<title>Qlik Sense login page</title>"
-
-      - type: word
-        part: header
-        name: wit-redy
-        words:
-          - "Server: REDY-Process"
-
-      - type: word
-        part: body
-        name: entels-entec
-        words:
-          - 'href="css/img/ENTEK.ico"'
-
-      - type: word
-        part: body
-        name: macroscop
-        words:
-          - "<title>Macroscop Web Client</title>"
-          - "<title>macroscop</title>"
-
-      - type: word
-        part: body
-        name: etic-telecom
-        words:
-          - "<title>Etic Telecom</title>"
-
-      - type: word
-        part: body
-        name: checkpoint-quantum-spark
-        words:
-          - 'content="Quantum Spark Security Appliance - Login"'
-# digest: 4a0a00473045022039e314fc3cbe16d41e16831235314cab22cfbb10018ee9d3b539d01247bba268022100a7d146d3162e6fd3d85a65075e073e1de5986f69e322f6b937b0fb210c9fd029:922c64590222798bb761d5b6d8e72950

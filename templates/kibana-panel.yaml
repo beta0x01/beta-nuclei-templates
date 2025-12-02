@@ -1,26 +1,14 @@
 id: kibana-panel
 
 info:
-  name: Kibana Login Panel - Detect
+  name: Kibana Panel Login
   author: petruknisme,daffainfo,c-sh0
   severity: info
-  description: Kibana login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cwe-id: CWE-200
-    cpe: cpe:2.3:a:elastic:kibana:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 3
-    vendor: elastic
-    product: kibana
-    shodan-query:
-      - http.title:"Kibana"
-      - http.title:"kibana"
-    fofa-query: title="kibana"
-    google-query: intitle:"kibana"
-  tags: panel,kibana,elastic,discovery
+    shodan-query: http.title:"Kibana"
+  tags: panel,kibana
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -28,9 +16,8 @@ http:
       - "{{BaseURL}}/app/kibana"
 
     stop-at-first-match: true
-    host-redirects: true
+    redirects: true
     max-redirects: 2
-
     matchers-condition: or
     matchers:
       - type: word
@@ -45,4 +32,3 @@ http:
         part: header
         regex:
           - '(?i)(Kbn-Name)'
-# digest: 4a0a00473045022066350a8e779074c2cd2b4905f3f795dfc70a901810df0818eddc44f5f527f48e022100e571328d43d51d65d996b9317ee8b404404bd4e55d600863e3b789fd0d90fa5b:922c64590222798bb761d5b6d8e72950

@@ -4,17 +4,12 @@ info:
   name: Jellyfin detected
   author: dwisiswant0
   severity: info
-  classification:
-    cpe: cpe:2.3:a:jellyfin:jellyfin:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 5
-    vendor: jellyfin
-    product: jellyfin
     shodan-query: http.html:"Jellyfin"
-  tags: tech,jellyfin,discovery
+  tags: tech,jellyfin
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/home.html"
@@ -24,7 +19,6 @@ http:
       - "{{BaseURL}}/web/manifest.json"
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -38,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022033246dbd5976b3555b5e0afe76a91219aa8073d25d5fce137f418cb7a9ac5a1f02207e0706d4d58f42cd499b8524d13a27093b2de7fe23bd8d5db86b88bb8e12f01d:922c64590222798bb761d5b6d8e72950

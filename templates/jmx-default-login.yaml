@@ -11,15 +11,10 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
-  metadata:
-    max-request: 28
-  tags: jboss,jmx,default-login,vuln
+  tags: jboss,jmx,default-login
 
-http:
+requests:
   - raw:
-      - |
-        GET /jmx-console/ HTTP/1.1
-        Host: {{Hostname}}
       - |
         GET /jmx-console/ HTTP/1.1
         Host: {{Hostname}}
@@ -41,11 +36,12 @@ http:
 
     matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - "!contains(body_1, 'JMImplementation') && contains(body_2, 'JMImplementation')"
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205de2ae2c7b89ce46ebee6334ad9a76f9794b6b99fb32cdc4c62f3d0329032689022100acd64586a3f568e31f2cb974a4ed19d453697e6ff1d202961e4774d1bcad9f71:922c64590222798bb761d5b6d8e72950
+
+      - type: word
+        words:
+          - 'JMImplementation'
+
+# Enhanced by mp on 2022/03/10
