@@ -5,12 +5,11 @@ info:
   author: theamanrawat
   severity: high
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.title:"Installer - Easyscripts"
   tags: misconfig,easyscripts,installer
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

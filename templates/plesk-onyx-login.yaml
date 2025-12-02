@@ -12,13 +12,12 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.html:"Plesk Onyx"
     google-query: inurl:login_up.php "Plesk Onyx"
   tags: panel,plesk,login,edb
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/login_up.php'

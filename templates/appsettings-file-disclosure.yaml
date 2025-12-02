@@ -9,11 +9,10 @@ info:
   reference:
     - https://twitter.com/hacker_/status/1518003548855930882?s=20&t=BVauK0yUjVl5yL7rwy0Eag
   metadata:
-    max-request: 2
     verified: true
   tags: exposure,files
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/appsettings.json"

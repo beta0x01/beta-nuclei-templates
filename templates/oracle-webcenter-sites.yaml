@@ -5,12 +5,11 @@ info:
   author: leovalcante
   severity: info
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.html:"WebCenter"
   tags: tech,oracle,webcenter
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/welcome_webcenter.html'

@@ -5,14 +5,13 @@ info:
   author: DhiyaneshDk
   severity: info
   metadata:
-    max-request: 4
     verified: true
     shodan-query:
       - html:"angular.json"
       - html:"angular-cli.json"
   tags: exposure,angularjs,files
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/.angular-cli.json"

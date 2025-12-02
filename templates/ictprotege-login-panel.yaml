@@ -5,7 +5,6 @@ info:
   author: ritikchaddha
   severity: info
   metadata:
-    max-request: 1
     verified: true
     shodan-query: title:"ICT Protege WX&reg;"
   classification:
@@ -14,7 +13,7 @@ info:
     cwe-id: CWE-200
   tags: panel,ictprotege
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/login.htm"

@@ -7,12 +7,11 @@ info:
   description: Parameters.yml was discovered.
   reference: https://www.exploit-db.com/ghdb/5986
   metadata:
-    max-request: 4
     verified: true
     shodan-query: html:"parameters.yml"
   tags: exposure,cloud,devops
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/parameters.yml"

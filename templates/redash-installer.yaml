@@ -5,12 +5,11 @@ info:
   author: DhiyaneshDk
   severity: high
   metadata:
-    max-request: 1
     verified: true
     shodan-query: html:"Redash Initial Setup"
   tags: misconfig,redash,install
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/setup'

@@ -2,17 +2,16 @@ id: api-ticketmaster
 
 info:
   name: Ticket Master API Test
-  author: 0xpugazh
+  author: 0xlittleboy
   severity: info
   reference:
     - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
   metadata:
-    max-request: 1
     verified: true
   tags: token-spray,ticketmaster
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://app.ticketmaster.com/discovery/v2/events.json?apikey={{token}}"

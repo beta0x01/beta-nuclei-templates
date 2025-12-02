@@ -5,12 +5,11 @@ info:
   author: righettod
   severity: info
   metadata:
-    max-request: 2
     verified: true
     shodan-query: http.html:"JHipster"
   tags: tech,jhipster
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

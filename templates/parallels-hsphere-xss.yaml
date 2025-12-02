@@ -13,12 +13,11 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
-    max-request: 2
     verified: true
     shodan-query: title:"h-sphere"
   tags: hsphere,xss,edb,parallels
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/webshell4/login.php?err=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'

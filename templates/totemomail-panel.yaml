@@ -12,12 +12,11 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 2
     verified: true
     google-query: intext:"totemomail" inurl:responsiveUI
   tags: totemomail,panel
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/responsiveUI/"

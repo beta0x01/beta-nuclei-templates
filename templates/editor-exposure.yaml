@@ -6,12 +6,11 @@ info:
   severity: low
   description: Editor configuration file was detected.
   metadata:
-    max-request: 1
     verified: true
     shodan-query: html:"editorconfig"
   tags: config,exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/.editorconfig"

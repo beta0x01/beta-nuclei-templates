@@ -9,11 +9,9 @@ info:
     - https://www.zenrows.com/documentation/
     - https://github.com/daffainfo/all-about-apikey/tree/main/zenrows
   tags: token-spray,zenrows
-  metadata:
-    max-request: 1
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.zenrows.com/v1/?apikey={{token}}&url=https://example.com"

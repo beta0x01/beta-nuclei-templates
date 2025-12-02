@@ -5,12 +5,11 @@ info:
   author: tess
   severity: high
   metadata:
-    max-request: 1
     verified: true
     shodan-query: title:"Turbo Website Reviewer"
   tags: turbo,misconfig,exposure,install
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/admin/install/install.php'
