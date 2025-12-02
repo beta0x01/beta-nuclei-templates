@@ -1,12 +1,20 @@
 id: rails-database-config
 
 info:
-  name: Ruby-on-Rails Database Configuration Exposure
+  name: Ruby on Rails Database Configuration File - Detect
   author: pdteam,geeknik
-  severity: low
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  description: Ruby on Rails database configuration file was detected, which may contain database credentials.
+  reference: https://guides.rubyonrails.org/configuring.html#configuring-a-database
   tags: config,exposure,rails
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/config/database.yml"
@@ -24,3 +32,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by cs on 2023/03/02

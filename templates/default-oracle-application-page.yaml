@@ -4,11 +4,12 @@ info:
   name: Oracle Application Server Containers
   author: dhiyaneshDk
   severity: info
-  reference:
-    - https://www.shodan.io/search?query=http.title%3A%22Oracle+Application+Server+Containers%22
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Oracle Application Server Containers"
   tags: tech,oracle
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

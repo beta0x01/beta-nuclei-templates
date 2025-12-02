@@ -7,8 +7,10 @@ info:
   reference:
     - https://blog.grimm-co.com/2021/06/the-walls-have-ears.html
   tags: stem,config,exposure,iot
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/privatekey.pem"

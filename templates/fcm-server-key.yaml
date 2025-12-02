@@ -7,8 +7,10 @@ info:
   reference:
     - https://abss.me/posts/fcm-takeover
   tags: exposure,token,google
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

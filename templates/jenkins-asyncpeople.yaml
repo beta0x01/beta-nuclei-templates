@@ -10,8 +10,10 @@ info:
     - https://issues.jenkins.io/browse/JENKINS-18884
     - https://issues.jenkins.io/browse/JENKINS-26469
   tags: jenkins
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/asynchPeople/"

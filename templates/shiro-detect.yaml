@@ -5,15 +5,17 @@ info:
   author: AresX
   severity: info
   tags: tech,shiro
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'
     headers:
       Cookie: JSESSIONID={{randstr}};rememberMe=123;
 
-    redirects: true
+    host-redirects: true
     max-redirects: 2
     matchers:
       - type: word

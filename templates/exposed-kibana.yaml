@@ -5,8 +5,10 @@ info:
   author: Shine
   severity: medium
   tags: kibana,unauth
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

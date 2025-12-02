@@ -10,8 +10,10 @@ info:
   classification:
     cwe-id: CWE-200
   tags: waf,tech,misc
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         POST / HTTP/1.1

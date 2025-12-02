@@ -5,8 +5,10 @@ info:
   author: furkansenan,dwisiswant0
   severity: info
   tags: docker,unauth,devops
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "http://{{Hostname}}/version"

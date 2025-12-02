@@ -1,4 +1,5 @@
 id: python-metrics
+
 info:
   name: Detect Python Exposed Metrics
   author: dhiyaneshDK
@@ -7,12 +8,15 @@ info:
   reference:
     - https://gist.github.com/ruanbekker/e5b1e7895f62b020ff29b5f40767190c
   metadata:
+    max-request: 1
     shodan-query: html:"python_gc_objects_collected_total"
   tags: exposure,devops,python
-requests:
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}/metrics"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -21,6 +25,7 @@ requests:
           - "python_gc_objects_collected_total"
           - "python_info"
         condition: and
+
       - type: status
         status:
           - 200

@@ -4,14 +4,16 @@ info:
   name: SSL/TLS-aware Test Page
   author: dhiyaneshDk
   severity: info
-  reference:
-    - https://www.shodan.io/search?query=http.title%3A%22Test+Page+for+the+SSL%2FTLS-aware+Apache+Installation+on+Web+Site%22&page=2
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Test Page for the SSL/TLS-aware Apache Installation on Web Site"
   tags: tech,ssltls
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers:
       - type: word
         words:

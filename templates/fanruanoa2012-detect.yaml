@@ -5,8 +5,10 @@ info:
   author: YanYun
   severity: info
   tags: oa,java,fanruan,tech
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

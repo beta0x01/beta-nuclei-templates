@@ -5,8 +5,10 @@ info:
   author: nkxxkn,elsfa7110,ofjaaah,exceed
   severity: info
   tags: tech,graphql
+  metadata:
+    max-request: 124
 
-requests:
+http:
   - method: POST
     path:
       - "{{BaseURL}}/HyperGraphQL"
@@ -17,6 +19,7 @@ requests:
       - "{{BaseURL}}/api/graphql/v1"
       - "{{BaseURL}}/explorer"
       - "{{BaseURL}}/express-graphql"
+      - "{{BaseURL}}/gql"
       - "{{BaseURL}}/graph"
       - "{{BaseURL}}/graph_cms"
       - "{{BaseURL}}/graphiql"

@@ -1,16 +1,20 @@
 id: prestashop-detect
+
 info:
   name: PrestaShop Tech Detection
   author: pdteam
   severity: info
   metadata:
+    max-request: 1
     shodan-query: http.component:"PrestaShop"
   tags: tech,cms,prestashop
-requests:
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
-    redirects: true
+
+    host-redirects: true
     max-redirects: 2
     matchers:
       - type: regex

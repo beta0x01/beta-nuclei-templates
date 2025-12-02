@@ -5,8 +5,10 @@ info:
   author: pdteam,geeknik
   severity: low
   tags: apache,debug
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     headers:
       Forwarded: "127.0.0.1"

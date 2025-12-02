@@ -7,10 +7,11 @@ info:
   reference:
     - http://www.jeecg.com/
   metadata:
+    max-request: 2
     fofa-query: title="Jeecg-Boot"
   tags: jeecg-boot,tech
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -1,12 +1,19 @@
 id: virtual-ema-detect
 
 info:
-  name: Virtual EMS Panel Detection
+  name: Virtual EMS Login Panel - Detect
   author: iamthefrogy
   severity: info
+  description: Virtual EMS login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
   tags: panel,ems
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/virtualems/Login.aspx"
@@ -19,3 +26,5 @@ requests:
           - "Browse"
           - "Welcome Guest"
         condition: and
+
+# Enhanced by md on 2023/01/24

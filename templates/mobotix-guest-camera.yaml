@@ -1,14 +1,21 @@
 id: mobotix-guest-camera
 
 info:
-  name: MOBOTIX Guest Camera
+  name: MOBOTIX Guest Camera Live View - Detect
   author: dhiyaneshDK
   severity: info
+  description: MOBOTIX Guest Camera live view was detected.
   reference:
     - https://www.exploit-db.com/ghdb/6848
-  tags: iot
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: iot,edb
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/cgi-bin/guestimage.html'
@@ -20,3 +27,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2023/03/08

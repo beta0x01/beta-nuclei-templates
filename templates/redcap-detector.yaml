@@ -5,8 +5,10 @@ info:
   author: philippedelteil,retr0
   severity: info
   tags: redcap,tech
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -1,12 +1,18 @@
 id: deadbolt-ransomware
+
 info:
   name: Deadbolt Ransomware Detection
   author: pdteam
   severity: info
-requests:
+  tags: ransomware,deadbolt
+  metadata:
+    max-request: 1
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers:
       - type: word
         words:

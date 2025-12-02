@@ -7,8 +7,10 @@ info:
   reference:
     - https://xz.aliyun.com/t/2941
   tags: dlink
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: POST
     path:
       - "{{BaseURL}}/hedwig.cgi"

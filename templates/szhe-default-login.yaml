@@ -12,8 +12,10 @@ info:
     cvss-score: 5.8
     cwe-id: CWE-522
   tags: szhe,default-login
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         POST /login/ HTTP/1.1

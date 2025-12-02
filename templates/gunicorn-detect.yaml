@@ -8,8 +8,10 @@ info:
   reference:
     - https://github.com/benoitc/gunicorn
   tags: tech,gunicorn
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

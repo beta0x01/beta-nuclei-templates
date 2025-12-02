@@ -4,11 +4,14 @@ info:
   name: LeanIX API Test
   author: dwisiswant0
   severity: info
-  reference: https://docs.leanix.net/docs/rest-api
+  reference:
+    - https://docs.leanix.net/docs/rest-api
   tags: token-spray,leanix
+  metadata:
+    max-request: 2
 
 self-contained: true
-requests:
+http:
   - method: GET
     path:
       - "https://us.leanix.net/services/integration-api/v1/examples/starterExample"

@@ -1,16 +1,20 @@
 id: ymhome-detect
+
 info:
   name: Ymhome-detect
   author: ffffffff0x
   severity: info
   metadata:
+    max-request: 1
     fofa-query: app="一米OA"
   tags: ymhome,tech
-requests:
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
-    redirects: true
+
+    host-redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:
@@ -20,6 +24,7 @@ requests:
           - "yimioa.apk"
           - "isSavePwd:"
         condition: and
+
       - type: status
         status:
           - 200

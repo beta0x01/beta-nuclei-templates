@@ -5,10 +5,11 @@ info:
   author: pdteam
   severity: info
   metadata:
+    max-request: 1
     shodan-query: http.title:"GitLab"
   tags: gitlab,misconfig
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/users/sign_in"

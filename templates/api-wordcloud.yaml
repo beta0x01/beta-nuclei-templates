@@ -4,13 +4,16 @@ info:
   name: Word Cloud API Test
   author: daffainfo
   severity: info
+  description: Easily create word clouds
   reference:
     - https://wordcloudapi.com/getting-started
-    - https://github.com/daffainfo/all-about-apikey/blob/main/Art-Design/Word%20Cloud.md
+    - https://github.com/daffainfo/all-about-apikey/tree/main/word-cloud
   tags: token-spray,wordcloud
+  metadata:
+    max-request: 1
 
 self-contained: true
-requests:
+http:
   - raw:
       - |
         POST https://textvis-word-cloud-v1.p.rapidapi.com/v1/textToCloud HTTP/1.1

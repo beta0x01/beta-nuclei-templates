@@ -5,17 +5,19 @@ info:
   author: Mhdsamx
   severity: high
   tags: takeover,sprintful
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'
 
     matchers-condition: and
     matchers:
-      - type: status
-        status:
-          - 200
+      - type: dsl
+        dsl:
+          - Host != ip
 
       - type: word
         words:
@@ -27,3 +29,7 @@ requests:
       - type: word
         words:
           - "Sprintful"
+
+      - type: status
+        status:
+          - 200

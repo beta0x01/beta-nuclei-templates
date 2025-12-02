@@ -8,15 +8,17 @@ info:
   reference:
     - https://github.com/octobercms/october
   tags: tech,octobercms
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/modules/system/assets/js/framework.combined-min.js"
 
     stop-at-first-match: true
-    redirects: true
+    host-redirects: true
     max-redirects: 1
     matchers:
       - type: word

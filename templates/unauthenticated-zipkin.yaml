@@ -8,8 +8,10 @@ info:
   reference:
     - https://zipkin.io/
   tags: unauth
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/config.json"

@@ -12,10 +12,11 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
+    max-request: 1
     fofa-query: app="stackstorm"
   tags: stackstorm,default-login
 
-requests:
+http:
   - raw:
       - |
         POST /auth/tokens HTTP/1.1

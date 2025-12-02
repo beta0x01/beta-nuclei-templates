@@ -5,8 +5,10 @@ info:
   author: pdteam
   severity: medium
   tags: debug,rails,exposure
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/{{randstr}}"

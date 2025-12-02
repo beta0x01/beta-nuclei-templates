@@ -5,8 +5,10 @@ info:
   author: sshell
   severity: info
   tags: tech,pega
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/prweb/PRRestService/unauthenticatedAPI/v1/docs"
