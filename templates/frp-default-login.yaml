@@ -1,13 +1,19 @@
 id: frp-default-login
 
 info:
-  name: Frp Default Login
+  name: FRP Default Login
   author: pikpikcu
   severity: high
+  description: FRP default login credentials were discovered.
+  reference:
+    - https://github.com/fatedier/frp/issues/1840
+  classification:
+    cwe-id: CWE-798
   tags: frp,default-login
-  reference: https://github.com/fatedier/frp/issues/1840
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         GET /api/proxy/tcp HTTP/1.1
@@ -26,7 +32,7 @@ requests:
 
       - type: word
         words:
-          - "proxies"
+          - '"proxies":'
         part: body
         condition: and
 
