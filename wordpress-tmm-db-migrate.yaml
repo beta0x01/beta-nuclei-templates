@@ -4,22 +4,17 @@ info:
   name: WordPress ThemeMarkers DB Migration File
   author: dwisiswant0
   severity: info
+  metadata:
+    max-request: 1
   tags: wordpress,wp-plugin,backup
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip"
 
-    raw:
-      - |
-        GET /wp-content/uploads/tmm_db_migrate/tmm_db_migrate.zip HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     max-size: 1000
+
     matchers-condition: and
     matchers:
       - type: word
@@ -38,4 +33,6 @@ requests:
 
       - type: binary
         binary:
-          - "504B0304"  # zip
+          - "504B0304" # zip
+
+# digest: 4a0a004730450220784c4949c81d41d015fe88f4c37efe926c1cc3d4b98a0c9a98fa1a297072991e022100cd5f7da1d8d976b9cfecda7d1084d64f5dfcd249b3b6947d424793b0fcb08824:922c64590222798bb761d5b6d8e72950
