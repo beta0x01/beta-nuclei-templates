@@ -1,13 +1,13 @@
-id: dom-xss
+id: reflected-parameters
 
 info:
-  name: DOM Cross Site Scripting
+  name: Reflected Parameters
   author: shelled
-  severity: medium
-  tags: xss,dom-xss
+  severity: info
+  tags: xss,rxss
 
 variables:
-  first: 'javascript:alert(1)'
+  first: "shelled"
 
 requests:
   - method: GET
@@ -16,8 +16,7 @@ requests:
 
     payloads:
       reflection:
-        - 'href="javascript:alert(1)"'
-        - 'href=javascript:alert(1)'
+        - "shelled"
 
     fuzzing:
       - part: query
